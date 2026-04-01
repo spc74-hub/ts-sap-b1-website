@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión Financiera y Contabilidad | SAP Business One - Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-tertiary-container": "#f8f6f6",
+            "inverse-surface": "#2f3131",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3f3",
+            "primary": "#b5000b",
+            "surface-dim": "#dadada",
+            "surface-container-high": "#e8e8e8",
+            "background": "#f9f9f9",
+            "secondary": "#5d5c74",
+            "surface-container-highest": "#e2e2e2",
+            "on-primary-container": "#fff5f3",
+            "surface-variant": "#e2e2e2",
+            "primary-container": "#e30613",
+            "outline-variant": "#e9bcb6",
+            "on-primary-fixed": "#410001",
+            "inverse-primary": "#ffb4aa",
+            "secondary-fixed-dim": "#c6c4df",
+            "secondary-container": "#e2e0fc",
+            "surface-bright": "#f9f9f9",
+            "tertiary-fixed": "#e4e2e2",
+            "on-secondary-fixed-variant": "#45455b",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#595959",
+            "on-background": "#1a1c1c",
+            "on-tertiary-fixed-variant": "#464747",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdad5",
+            "tertiary-container": "#717171",
+            "on-surface-variant": "#5e3f3b",
+            "primary-fixed-dim": "#ffb4aa",
+            "outline": "#936e69",
+            "surface-container": "#eeeeee",
+            "on-primary-fixed-variant": "#930007",
+            "on-secondary-fixed": "#1a1a2e",
+            "surface": "#f9f9f9",
+            "secondary-fixed": "#e2e0fc",
+            "on-secondary-container": "#63627a",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "inverse-on-surface": "#f1f1f1",
+            "error": "#ba1a1a",
+            "surface-tint": "#c0000c",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em]" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="relative py-32 overflow-hidden bg-on-secondary-fixed">
+  <div class="absolute inset-0 bg-gradient-to-br from-on-secondary-fixed via-on-secondary-fixed/90 to-primary/20"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8">
+    <a href="modules.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      <span class="text-sm">Volver a Módulos</span>
+    </a>
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-container mb-6">
+      <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+      <span class="text-xs uppercase tracking-[0.15em] font-semibold">Módulo Financiero</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+      Gestión Financiera y Contabilidad
+    </h1>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+      Control total de tus finanzas con automatización inteligente y reporting en tiempo real.
+    </p>
+  </div>
+</section>
+
+<!-- Contabilidad General -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">menu_book</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Contabilidad</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Contabilidad General</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Un sistema contable robusto y flexible que se adapta a las necesidades de cualquier empresa, con automatización de procesos recurrentes y soporte completo para operaciones internacionales.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">account_tree</span>
+          <h4 class="font-bold mb-2">Plan de cuentas</h4>
+          <p class="text-sm text-tertiary">Predefinido y totalmente personalizable para adaptarse a la estructura de tu negocio.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">edit_note</span>
+          <h4 class="font-bold mb-2">Asientos y diarios</h4>
+          <p class="text-sm text-tertiary">Asientos contables manuales y automáticos con diarios completamente configurables.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">autorenew</span>
+          <h4 class="font-bold mb-2">Contabilizaciones recurrentes</h4>
+          <p class="text-sm text-tertiary">Automatización de asientos periódicos para reducir errores y ahorrar tiempo.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">currency_exchange</span>
+          <h4 class="font-bold mb-2">Gestión multicurrency</h4>
+          <p class="text-sm text-tertiary">Soporte completo para múltiples divisas con actualización automática de tipos de cambio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cuentas por Cobrar -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">payments</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Cuentas por Cobrar</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Gestión integral del ciclo de cobro, desde la facturación hasta la conciliación, con visibilidad total sobre la posición de cada cliente.</p>
+    </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">receipt_long</span>
+        <h4 class="font-bold mb-2">Facturación</h4>
+        <p class="text-sm text-tertiary">Creación y envío de facturas de venta con plantillas personalizables y envío automatizado.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">price_check</span>
+        <h4 class="font-bold mb-2">Gestión de recibos</h4>
+        <p class="text-sm text-tertiary">Registro de cobros con soporte para pagos parciales y múltiples métodos de pago.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">timeline</span>
+        <h4 class="font-bold mb-2">Aging reports</h4>
+        <p class="text-sm text-tertiary">Informes de antigüedad de deuda en tiempo real para una gestión proactiva de cobros.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">analytics</span>
+        <h4 class="font-bold mb-2">Análisis de ingresos</h4>
+        <p class="text-sm text-tertiary">Desglose de ingresos por cliente, producto, período y canal de venta.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">handshake</span>
+        <h4 class="font-bold mb-2">Comisiones</h4>
+        <p class="text-sm text-tertiary">Seguimiento y cálculo automático de comisiones por comercial y transacción.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">notification_important</span>
+        <h4 class="font-bold mb-2">Gestión proactiva</h4>
+        <p class="text-sm text-tertiary">Alertas automáticas de vencimientos y seguimiento proactivo de cobros pendientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cuentas por Pagar -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">description</span>
+          <h4 class="font-bold mb-2">Facturas de costos y gastos</h4>
+          <p class="text-sm text-tertiary">Control estandarizado de todas las facturas de proveedores con categorización automática.</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">hub</span>
+          <h4 class="font-bold mb-2">Centros de coste</h4>
+          <p class="text-sm text-tertiary">Asignación directa de gastos a centros de coste para un control presupuestario preciso.</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">folder_special</span>
+          <h4 class="font-bold mb-2">Categorización por proyecto</h4>
+          <p class="text-sm text-tertiary">Vinculación de gastos a proyectos específicos para un seguimiento detallado de rentabilidad.</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">flight_takeoff</span>
+          <h4 class="font-bold mb-2">Gastos de viaje</h4>
+          <p class="text-sm text-tertiary">Gestión integral de notas de gastos de viaje con flujos de aprobación configurables.</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm sm:col-span-2">
+          <span class="material-symbols-outlined text-primary mb-3 block">tune</span>
+          <h4 class="font-bold mb-2">Políticas de pago</h4>
+          <p class="text-sm text-tertiary">Condiciones y políticas de pago configurables por proveedor, incluyendo descuentos por pronto pago y plazos personalizados.</p>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Gastos</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Cuentas por Pagar</h2>
+        <p class="text-tertiary text-lg leading-relaxed">Controla y estandariza todos los procesos de pago a proveedores con asignación inteligente a centros de coste, proyectos y políticas de pago configurables para optimizar el flujo de caja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Banca y Conciliación -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">account_balance</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Banca y Conciliación</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Procesamiento completo de operaciones bancarias con conciliación automática para un cierre contable ágil y preciso.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">local_atm</span>
+        <h4 class="font-bold mb-3">Procesamiento de efectivo</h4>
+        <p class="text-sm text-tertiary">Gestión de cobros y pagos en efectivo, cheques, transferencias electrónicas y tarjetas de crédito.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">compare_arrows</span>
+        <h4 class="font-bold mb-3">Extractos bancarios</h4>
+        <p class="text-sm text-tertiary">Importación y procesamiento automático de extractos bancarios para una visibilidad inmediata de movimientos.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">fact_check</span>
+        <h4 class="font-bold mb-3">Conciliación automática</h4>
+        <p class="text-sm text-tertiary">Conciliación automática del libro mayor con compensación por lotes para un cierre rápido y sin errores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Presupuestos -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">savings</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Control presupuestario</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Presupuestos</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Define presupuestos por centro de coste, sucursal o unidad de negocio con alertas y bloqueos automáticos para garantizar el control del gasto en toda la organización.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Definición por centro de coste, sucursal y unidad de negocio</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Bloqueo automático cuando se excede el presupuesto asignado</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Cálculo automático basado en métodos de distribución configurables</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Alertas en tiempo real de desviaciones presupuestarias</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/10">
+        <div class="space-y-6">
+          <div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl">
+            <div>
+              <p class="font-bold">Marketing</p>
+              <p class="text-sm text-tertiary">Centro de coste 201</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-primary">78%</p>
+              <p class="text-xs text-tertiary">del presupuesto</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl">
+            <div>
+              <p class="font-bold">Operaciones</p>
+              <p class="text-sm text-tertiary">Centro de coste 301</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-green-600">45%</p>
+              <p class="text-xs text-tertiary">del presupuesto</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border-2 border-primary/20">
+            <div>
+              <p class="font-bold">I+D</p>
+              <p class="text-sm text-tertiary">Centro de coste 401</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-primary-container">97%</p>
+              <p class="text-xs text-primary-container font-semibold">Alerta activa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Activos Fijos -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">domain</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Activos Fijos</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Gestión completa del ciclo de vida de los activos de la empresa, desde su adquisición hasta su baja, con cálculos automáticos de depreciación.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">inventory</span>
+        <h4 class="font-bold mb-2">Mantenimiento de activos</h4>
+        <p class="text-sm text-tertiary">Registro y seguimiento de todos los activos fijos de la empresa con información detallada.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">trending_down</span>
+        <h4 class="font-bold mb-2">Depreciación automática</h4>
+        <p class="text-sm text-tertiary">Cálculo automático de depreciación con múltiples métodos (lineal, acelerado, por uso).</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">event_note</span>
+        <h4 class="font-bold mb-2">Asientos por ejercicio</h4>
+        <p class="text-sm text-tertiary">Generación automática de asientos contables de depreciación por ejercicio fiscal.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">query_stats</span>
+        <h4 class="font-bold mb-2">Previsión de valor</h4>
+        <p class="text-sm text-tertiary">Informes de previsión de valor futuro de activos para planificación financiera a largo plazo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reporting Financiero -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">assessment</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Informes</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Reporting Financiero</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Accede a todos los informes financieros clave en tiempo real, totalmente personalizables y con la capacidad de profundizar en los datos hasta el nivel de transacción individual.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary">balance</span>
+          <span class="font-semibold text-sm">Balance de situación</span>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary">trending_up</span>
+          <span class="font-semibold text-sm">Cuenta de resultados</span>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary">water_drop</span>
+          <span class="font-semibold text-sm">Flujo de caja</span>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary">fact_check</span>
+          <span class="font-semibold text-sm">Balance de comprobación</span>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary">schedule</span>
+          <span class="font-semibold text-sm">Aging de clientes</span>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary">schedule</span>
+          <span class="font-semibold text-sm">Aging de proveedores</span>
+        </div>
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10 flex items-center gap-4 sm:col-span-2">
+          <span class="material-symbols-outlined text-primary">dashboard_customize</span>
+          <span class="font-semibold text-sm">Informes personalizables en tiempo real</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cumplimiento -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">verified_user</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Cumplimiento y Seguridad</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Cumple con todas las normativas fiscales y de auditoría con herramientas de control de acceso, trazabilidad completa y cálculos fiscales automáticos.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">admin_panel_settings</span>
+        <h4 class="font-bold mb-2">Control de acceso</h4>
+        <p class="text-sm text-tertiary">Sistema basado en roles con permisos granulares para cada función y dato del sistema.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">history</span>
+        <h4 class="font-bold mb-2">Audit trail</h4>
+        <p class="text-sm text-tertiary">Trazabilidad completa de todas las operaciones con registro de usuario, fecha y cambios realizados.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">calculate</span>
+        <h4 class="font-bold mb-2">Cálculos fiscales</h4>
+        <p class="text-sm text-tertiary">Automatización de cálculos de IVA, retenciones y demás obligaciones fiscales vigentes.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">gavel</span>
+        <h4 class="font-bold mb-2">Verifactu 2026</h4>
+        <p class="text-sm text-tertiary">Preparado para el cumplimiento de la normativa Verifactu de facturación electrónica obligatoria en 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-on-secondary-fixed text-white">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-6">Optimiza la gestión financiera de tu empresa</h2>
+    <p class="text-xl text-gray-400 mb-10">Descubre cómo SAP Business One puede automatizar tus procesos financieros y darte visibilidad total sobre la salud económica de tu negocio.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html#contact" class="px-10 py-5 bg-primary-container text-white font-bold text-lg rounded-lg shadow-2xl hover:bg-primary transition-all inline-flex items-center gap-3 justify-center">
+        Solicita una demo gratuita
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a href="modules.html" class="px-10 py-5 border border-white/20 text-white font-semibold text-lg rounded-lg hover:bg-white/5 transition-all inline-flex items-center gap-3 justify-center">
+        Ver todos los módulos
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 px-8">
+  <div class="max-w-7xl mx-auto mb-16">
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 border-b border-outline-variant/10 pb-12 opacity-70">
+      <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Global Partners</span>
+      <span class="font-bold text-on-surface">SAP Gold</span>
+      <span class="font-bold text-on-surface">AWS</span>
+      <span class="font-bold text-on-surface">Microsoft</span>
+      <span class="font-bold text-on-surface">Oracle</span>
+      <span class="font-bold text-on-surface">Google Cloud</span>
+      <span class="font-bold text-on-surface">IBM</span>
+      <span class="font-bold text-on-surface">Salesforce</span>
+      <span class="font-bold text-on-surface">IFS</span>
+      <span class="font-bold text-on-surface">SAS</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <div class="space-y-6">
+      <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      <p class="text-gray-600 text-sm leading-relaxed">Expertos en implementación de sistemas de gestión empresarial y transformación digital a nivel global.</p>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Servicios</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Consultoría ERP</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Desarrollo Custom</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Soporte 24/7</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Formación SAP</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Compañía</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Careers</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Blog</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Privacy Policy</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Legal</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Contacto</h5>
+      <ul class="space-y-2">
+        <li class="text-gray-600 text-sm">+351 213 504 870</li>
+        <li class="text-gray-600 text-sm">timestamp@timestampgroup.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10 text-center">
+    <p class="text-sm text-tertiary">&copy; 2026 Timestamp Group. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>

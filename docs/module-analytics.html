@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analítica e Inteligencia de Negocio | SAP Business One - Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-tertiary-container": "#f8f6f6",
+            "inverse-surface": "#2f3131",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3f3",
+            "primary": "#b5000b",
+            "surface-dim": "#dadada",
+            "surface-container-high": "#e8e8e8",
+            "background": "#f9f9f9",
+            "secondary": "#5d5c74",
+            "surface-container-highest": "#e2e2e2",
+            "on-primary-container": "#fff5f3",
+            "surface-variant": "#e2e2e2",
+            "primary-container": "#e30613",
+            "outline-variant": "#e9bcb6",
+            "on-primary-fixed": "#410001",
+            "inverse-primary": "#ffb4aa",
+            "secondary-fixed-dim": "#c6c4df",
+            "secondary-container": "#e2e0fc",
+            "surface-bright": "#f9f9f9",
+            "tertiary-fixed": "#e4e2e2",
+            "on-secondary-fixed-variant": "#45455b",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#595959",
+            "on-background": "#1a1c1c",
+            "on-tertiary-fixed-variant": "#464747",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdad5",
+            "tertiary-container": "#717171",
+            "on-surface-variant": "#5e3f3b",
+            "primary-fixed-dim": "#ffb4aa",
+            "outline": "#936e69",
+            "surface-container": "#eeeeee",
+            "on-primary-fixed-variant": "#930007",
+            "on-secondary-fixed": "#1a1a2e",
+            "surface": "#f9f9f9",
+            "secondary-fixed": "#e2e0fc",
+            "on-secondary-container": "#63627a",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "inverse-on-surface": "#f1f1f1",
+            "error": "#ba1a1a",
+            "surface-tint": "#c0000c",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em]" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="relative py-32 overflow-hidden bg-on-secondary-fixed">
+  <div class="absolute inset-0 bg-gradient-to-br from-on-secondary-fixed via-on-secondary-fixed/90 to-primary/20"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8">
+    <a href="modules.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      <span class="text-sm">Volver a Módulos</span>
+    </a>
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-container mb-6">
+      <span class="material-symbols-outlined text-[18px]">insights</span>
+      <span class="text-xs uppercase tracking-[0.15em] font-semibold">Módulo de Analítica</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+      Analítica e Inteligencia de Negocio
+    </h1>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+      Transforma datos en decisiones con reporting en tiempo real y analítica predictiva.
+    </p>
+  </div>
+</section>
+
+<!-- Dashboards Ejecutivos -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">dashboard</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Dashboards</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Dashboards Ejecutivos</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Cuadros de mando interactivos con KPIs configurables por rol que ofrecen una visión inmediata de las métricas clave del negocio en tiempo real.</p>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="bg-surface-container-lowest p-4 rounded-xl text-center">
+            <p class="text-xs text-tertiary mb-1">Ingresos mes</p>
+            <p class="text-2xl font-bold text-primary-container">1.24M</p>
+            <p class="text-xs text-green-600 font-semibold">+12.3%</p>
+          </div>
+          <div class="bg-surface-container-lowest p-4 rounded-xl text-center">
+            <p class="text-xs text-tertiary mb-1">Margen bruto</p>
+            <p class="text-2xl font-bold">34.2%</p>
+            <p class="text-xs text-green-600 font-semibold">+2.1pp</p>
+          </div>
+          <div class="bg-surface-container-lowest p-4 rounded-xl text-center">
+            <p class="text-xs text-tertiary mb-1">Pedidos activos</p>
+            <p class="text-2xl font-bold">847</p>
+            <p class="text-xs text-tertiary">142 pendientes envío</p>
+          </div>
+          <div class="bg-surface-container-lowest p-4 rounded-xl text-center">
+            <p class="text-xs text-tertiary mb-1">Cashflow 30d</p>
+            <p class="text-2xl font-bold text-green-600">+218K</p>
+            <p class="text-xs text-tertiary">Proyección positiva</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-4 rounded-xl">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold">Top 5 productos por margen</span>
+            <span class="material-symbols-outlined text-tertiary text-[16px]">more_horiz</span>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <div class="flex-1 bg-surface-container-high rounded-full h-2"><div class="bg-primary-container h-2 rounded-full" style="width:92%"></div></div>
+              <span class="text-xs text-tertiary w-8">92%</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex-1 bg-surface-container-high rounded-full h-2"><div class="bg-primary-container h-2 rounded-full" style="width:78%"></div></div>
+              <span class="text-xs text-tertiary w-8">78%</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex-1 bg-surface-container-high rounded-full h-2"><div class="bg-primary-container h-2 rounded-full" style="width:65%"></div></div>
+              <span class="text-xs text-tertiary w-8">65%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Crystal Reports -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">description</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Crystal Reports</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Motor de generación de informes avanzados integrado nativamente en SAP Business One con más de 500 informes predefinidos y personalización total.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">auto_awesome</span>
+        <h4 class="font-bold mb-3">Informes avanzados</h4>
+        <p class="text-sm text-tertiary">Generación de informes con diseño profesional, gráficos interactivos, tablas cruzadas y sub-informes anidados.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">library_books</span>
+        <h4 class="font-bold mb-3">+500 informes predefinidos</h4>
+        <p class="text-sm text-tertiary">Biblioteca completa de informes listos para usar que cubren finanzas, ventas, compras, inventario y producción.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">edit</span>
+        <h4 class="font-bold mb-3">Personalización sin IT</h4>
+        <p class="text-sm text-tertiary">Los usuarios de negocio pueden modificar y crear informes sin necesidad de conocimientos técnicos o del departamento de IT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAP HANA Analytics -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-on-secondary-fixed p-10 rounded-2xl text-white">
+          <h4 class="text-lg font-bold mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined">memory</span>
+            SAP HANA In-Memory
+          </h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 py-3 border-b border-white/10">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">bolt</span>
+              <div>
+                <p class="font-semibold text-sm">Hasta 10x más rápido</p>
+                <p class="text-xs text-gray-400">Tecnología in-memory que acelera consultas y análisis complejos hasta 10 veces respecto a bases de datos tradicionales.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 py-3 border-b border-white/10">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">speed</span>
+              <div>
+                <p class="font-semibold text-sm">Analítica en tiempo real</p>
+                <p class="text-xs text-gray-400">Análisis sobre datos transaccionales en vivo, sin necesidad de procesos ETL ni data warehouses separados.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 py-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">search</span>
+              <div>
+                <p class="font-semibold text-sm">Búsqueda semántica y text mining</p>
+                <p class="text-xs text-gray-400">Análisis de texto no estructurado para extraer insights de emails, documentos y notas de clientes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">memory</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">HANA</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">SAP HANA Analytics</h2>
+        <p class="text-tertiary text-lg leading-relaxed">La tecnología in-memory de SAP HANA transforma la velocidad del análisis. Consultas que antes tardaban minutos ahora se resuelven en segundos, con analítica en tiempo real integrada y capacidades avanzadas de búsqueda semántica y text mining.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Drag and Relate -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">touch_app</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Drag and Relate</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Accede a datos desde múltiples fuentes con un click, crea informes ad-hoc y navega entre datos relacionados de forma intuitiva.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">link</span>
+        <h4 class="font-bold mb-3">Datos conectados</h4>
+        <p class="text-sm text-tertiary">Acceso instantáneo a datos desde múltiples fuentes del sistema con un solo click. Arrastra cualquier dato para ver toda la información relacionada.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">add_chart</span>
+        <h4 class="font-bold mb-3">Informes ad-hoc</h4>
+        <p class="text-sm text-tertiary">Creación de informes sobre la marcha sin necesidad de diseño previo. Arrastra campos, filtra datos y visualiza resultados al instante.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">explore</span>
+        <h4 class="font-bold mb-3">Navegación relacional</h4>
+        <p class="text-sm text-tertiary">Navega entre datos relacionados de forma natural: de un cliente a sus pedidos, facturas, pagos y tickets de servicio en segundos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Analítica Predictiva -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">IA y ML</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Analítica Predictiva</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Machine learning integrado que transforma datos históricos en predicciones accionables para anticipar la demanda, detectar anomalías y descubrir tendencias de mercado antes que la competencia.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">smart_toy</span>
+          <h4 class="font-bold mb-2">Machine learning</h4>
+          <p class="text-sm text-tertiary">Algoritmos de ML integrados que aprenden de tus datos para mejorar continuamente las predicciones.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">auto_graph</span>
+          <h4 class="font-bold mb-2">Predicción de demanda</h4>
+          <p class="text-sm text-tertiary">Forecasting basado en patrones históricos, estacionalidad y variables externas del mercado.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">warning</span>
+          <h4 class="font-bold mb-2">Detección de anomalías</h4>
+          <p class="text-sm text-tertiary">Identificación automática de datos atípicos, fraudes potenciales o desviaciones significativas.</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">trending_up</span>
+          <h4 class="font-bold mb-2">Tendencias de mercado</h4>
+          <p class="text-sm text-tertiary">Análisis de tendencias para anticipar cambios en el mercado y ajustar la estrategia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Informes Financieros -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">account_balance_wallet</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Informes Financieros</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Todos los informes financieros esenciales disponibles en tiempo real, personalizables por departamento y con capacidad de drill-down hasta la transacción.</p>
+    </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary mb-2 block">balance</span>
+        <h4 class="font-bold text-sm">Balance</h4>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary mb-2 block">trending_up</span>
+        <h4 class="font-bold text-sm">P&L</h4>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary mb-2 block">water_drop</span>
+        <h4 class="font-bold text-sm">Flujo de caja</h4>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary mb-2 block">schedule</span>
+        <h4 class="font-bold text-sm">Aging reports</h4>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary mb-2 block">tune</span>
+        <h4 class="font-bold text-sm">Por departamento</h4>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary mb-2 block">dashboard_customize</span>
+        <h4 class="font-bold text-sm">Personalizados</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integración con BI Externo -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+            <div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span class="font-bold text-primary text-sm">PBI</span>
+            </div>
+            <h4 class="font-bold text-sm mb-1">Power BI</h4>
+            <p class="text-xs text-tertiary">Conector nativo para Microsoft Power BI</p>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+            <div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span class="font-bold text-primary text-sm">TAB</span>
+            </div>
+            <h4 class="font-bold text-sm mb-1">Tableau</h4>
+            <p class="text-xs text-tertiary">Integración completa con Tableau</p>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+            <div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span class="material-symbols-outlined text-primary">grid_on</span>
+            </div>
+            <h4 class="font-bold text-sm mb-1">Excel</h4>
+            <p class="text-xs text-tertiary">Exportación directa a Excel</p>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+            <div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span class="material-symbols-outlined text-primary">file_download</span>
+            </div>
+            <h4 class="font-bold text-sm mb-1">Multi-formato</h4>
+            <p class="text-xs text-tertiary">PDF, CSV, XML y más</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">share</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Integraciones</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Integración con BI Externo</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Conectores nativos para las principales herramientas de Business Intelligence del mercado, con exportación en múltiples formatos para que trabajes con los datos como prefieras.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Conectores para Power BI, Tableau y otras herramientas BI</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Exportación en Excel, PDF, CSV y XML</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">APIs abiertas para integraciones personalizadas</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-on-secondary-fixed text-white">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-6">Convierte datos en ventaja competitiva</h2>
+    <p class="text-xl text-gray-400 mb-10">Descubre cómo SAP Business One te da el poder de la analítica avanzada para tomar decisiones más rápidas y más inteligentes.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html#contact" class="px-10 py-5 bg-primary-container text-white font-bold text-lg rounded-lg shadow-2xl hover:bg-primary transition-all inline-flex items-center gap-3 justify-center">
+        Solicita una demo gratuita
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a href="modules.html" class="px-10 py-5 border border-white/20 text-white font-semibold text-lg rounded-lg hover:bg-white/5 transition-all inline-flex items-center gap-3 justify-center">
+        Ver todos los módulos
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 px-8">
+  <div class="max-w-7xl mx-auto mb-16">
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 border-b border-outline-variant/10 pb-12 opacity-70">
+      <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Global Partners</span>
+      <span class="font-bold text-on-surface">SAP Gold</span>
+      <span class="font-bold text-on-surface">AWS</span>
+      <span class="font-bold text-on-surface">Microsoft</span>
+      <span class="font-bold text-on-surface">Oracle</span>
+      <span class="font-bold text-on-surface">Google Cloud</span>
+      <span class="font-bold text-on-surface">IBM</span>
+      <span class="font-bold text-on-surface">Salesforce</span>
+      <span class="font-bold text-on-surface">IFS</span>
+      <span class="font-bold text-on-surface">SAS</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <div class="space-y-6">
+      <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      <p class="text-gray-600 text-sm leading-relaxed">Expertos en implementación de sistemas de gestión empresarial y transformación digital a nivel global.</p>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Servicios</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Consultoría ERP</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Desarrollo Custom</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Soporte 24/7</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Formación SAP</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Compañía</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Careers</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Blog</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Privacy Policy</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Legal</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Contacto</h5>
+      <ul class="space-y-2">
+        <li class="text-gray-600 text-sm">+351 213 504 870</li>
+        <li class="text-gray-600 text-sm">timestamp@timestampgroup.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10 text-center">
+    <p class="text-sm text-tertiary">&copy; 2026 Timestamp Group. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>

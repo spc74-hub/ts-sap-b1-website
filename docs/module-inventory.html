@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inventario y Almacén | SAP Business One - Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-tertiary-container": "#f8f6f6",
+            "inverse-surface": "#2f3131",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3f3",
+            "primary": "#b5000b",
+            "surface-dim": "#dadada",
+            "surface-container-high": "#e8e8e8",
+            "background": "#f9f9f9",
+            "secondary": "#5d5c74",
+            "surface-container-highest": "#e2e2e2",
+            "on-primary-container": "#fff5f3",
+            "surface-variant": "#e2e2e2",
+            "primary-container": "#e30613",
+            "outline-variant": "#e9bcb6",
+            "on-primary-fixed": "#410001",
+            "inverse-primary": "#ffb4aa",
+            "secondary-fixed-dim": "#c6c4df",
+            "secondary-container": "#e2e0fc",
+            "surface-bright": "#f9f9f9",
+            "tertiary-fixed": "#e4e2e2",
+            "on-secondary-fixed-variant": "#45455b",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#595959",
+            "on-background": "#1a1c1c",
+            "on-tertiary-fixed-variant": "#464747",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdad5",
+            "tertiary-container": "#717171",
+            "on-surface-variant": "#5e3f3b",
+            "primary-fixed-dim": "#ffb4aa",
+            "outline": "#936e69",
+            "surface-container": "#eeeeee",
+            "on-primary-fixed-variant": "#930007",
+            "on-secondary-fixed": "#1a1a2e",
+            "surface": "#f9f9f9",
+            "secondary-fixed": "#e2e0fc",
+            "on-secondary-container": "#63627a",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "inverse-on-surface": "#f1f1f1",
+            "error": "#ba1a1a",
+            "surface-tint": "#c0000c",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em]" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="relative py-32 overflow-hidden bg-on-secondary-fixed">
+  <div class="absolute inset-0 bg-gradient-to-br from-on-secondary-fixed via-on-secondary-fixed/90 to-primary/20"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8">
+    <a href="modules.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      <span class="text-sm">Volver a Módulos</span>
+    </a>
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-container mb-6">
+      <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+      <span class="text-xs uppercase tracking-[0.15em] font-semibold">Módulo de Inventario</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+      Inventario y Almacén
+    </h1>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+      Visibilidad total de tu stock en tiempo real con trazabilidad completa.
+    </p>
+  </div>
+</section>
+
+<!-- Control en Tiempo Real -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Tiempo real</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Control en Tiempo Real</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Conoce el estado exacto de tu inventario en cada momento. Tracking de stock en toda la cadena de suministro con alertas automáticas cuando los niveles bajan del mínimo configurado.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">gps_fixed</span>
+          <h4 class="font-bold mb-2 text-sm">Tracking de stock</h4>
+          <p class="text-xs text-tertiary">En toda la cadena de suministro</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">speed</span>
+          <h4 class="font-bold mb-2 text-sm">Visibilidad instantánea</h4>
+          <p class="text-xs text-tertiary">Niveles actualizados al segundo</p>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">notifications_active</span>
+          <h4 class="font-bold mb-2 text-sm">Alertas automáticas</h4>
+          <p class="text-xs text-tertiary">Stock mínimo y reposición</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gestión Multi-almacén -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">warehouse</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Gestión Multi-almacén</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Gestiona múltiples ubicaciones de almacén con control de bins, reglas de asignación y optimización de movimientos internos.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">location_on</span>
+        <h4 class="font-bold mb-2">Múltiples ubicaciones</h4>
+        <p class="text-sm text-tertiary">Gestión centralizada de varios almacenes con visibilidad consolidada de stock.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">grid_view</span>
+        <h4 class="font-bold mb-2">Gestión de bins</h4>
+        <p class="text-sm text-tertiary">Organización por ubicaciones (bins) dentro de cada almacén para localización precisa.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">rule</span>
+        <h4 class="font-bold mb-2">Reglas de asignación</h4>
+        <p class="text-sm text-tertiary">Reglas automáticas para asignar stock a ubicaciones según producto, rotación o categoría.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">sync_alt</span>
+        <h4 class="font-bold mb-2">Optimización de movimientos</h4>
+        <p class="text-sm text-tertiary">Minimización de desplazamientos internos con algoritmos de asignación inteligente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trazabilidad -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+              <span class="material-symbols-outlined text-primary">qr_code_2</span>
+              <div>
+                <p class="font-bold text-sm">Lote #2026-03-A451</p>
+                <p class="text-xs text-tertiary">Proveedor: Materiales Ibérica S.L.</p>
+              </div>
+              <span class="ml-auto px-3 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-full">En stock</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+              <span class="material-symbols-outlined text-primary">pin</span>
+              <div>
+                <p class="font-bold text-sm">Serie: SN-78452-EU</p>
+                <p class="text-xs text-tertiary">Almacén: Barcelona - Bin A3-07</p>
+              </div>
+              <span class="ml-auto px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full">Asignado</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+              <span class="material-symbols-outlined text-primary">event</span>
+              <div>
+                <p class="font-bold text-sm">Caducidad: 15/09/2026</p>
+                <p class="text-xs text-tertiary">182 días restantes</p>
+              </div>
+              <span class="ml-auto px-3 py-1 bg-yellow-50 text-yellow-700 text-xs font-bold rounded-full">Alerta pronto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">qr_code_scanner</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Trazabilidad</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Trazabilidad</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Trazabilidad total con gestión de lotes, números de serie y fechas de caducidad. Documenta permisos de importación y cumple con las normativas de cada sector.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Gestión de lotes y números de serie</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Control de fechas de caducidad con alertas</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Documentación de permisos de importación</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modelos de Costeo -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">calculate</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Modelos de Costeo</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Elige el modelo de costeo que mejor se adapte a tu negocio y obtén un análisis de costes preciso en tiempo real.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <div class="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-primary font-bold text-lg">FIFO</span>
+        </div>
+        <h4 class="font-bold mb-2">First In, First Out</h4>
+        <p class="text-sm text-tertiary">El primer artículo en entrar es el primero en salir. Ideal para productos perecederos.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <div class="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-primary">functions</span>
+        </div>
+        <h4 class="font-bold mb-2">Media Móvil</h4>
+        <p class="text-sm text-tertiary">Coste promedio ponderado que se recalcula con cada entrada de mercancía.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <div class="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-primary">straighten</span>
+        </div>
+        <h4 class="font-bold mb-2">Estándar</h4>
+        <p class="text-sm text-tertiary">Coste predefinido con análisis de desviaciones respecto al coste real.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <div class="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-primary">analytics</span>
+        </div>
+        <h4 class="font-bold mb-2">Análisis en tiempo real</h4>
+        <p class="text-sm text-tertiary">Visibilidad inmediata de costes de inventario independientemente del modelo elegido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Picking y Logística -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Logística</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Picking y Logística</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Optimiza las rutas de picking para reducir tiempos de preparación de pedidos y gestiona transferencias entre almacenes de forma eficiente.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Optimización de rutas de picking para minimizar desplazamientos</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Reducción significativa de tiempos de preparación de pedidos</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Transferencias entre almacenes con documentación automática</span>
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">route</span>
+          <h4 class="font-bold mb-2">Rutas optimizadas</h4>
+          <p class="text-sm text-tertiary">Algoritmos que calculan la ruta de picking más eficiente.</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <span class="material-symbols-outlined text-primary mb-3 block">timer</span>
+          <h4 class="font-bold mb-2">Reducción de tiempos</h4>
+          <p class="text-sm text-tertiary">Menor tiempo de preparación por pedido procesado.</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm sm:col-span-2">
+          <span class="material-symbols-outlined text-primary mb-3 block">swap_horiz</span>
+          <h4 class="font-bold mb-2">Transferencias entre almacenes</h4>
+          <p class="text-sm text-tertiary">Movimientos de stock entre ubicaciones con generación automática de documentos de salida y entrada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gestión de Pedidos Especiales -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">deployed_code</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Gestión de Pedidos Especiales</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Soporte para escenarios logísticos avanzados: consignación, drop-ship, órdenes especiales y múltiples unidades de medida.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">handshake</span>
+        <h4 class="font-bold mb-2">Consignación</h4>
+        <p class="text-sm text-tertiary">Gestión de stock en consignación con control de propiedad y facturación por consumo.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">flight_takeoff</span>
+        <h4 class="font-bold mb-2">Drop-ship</h4>
+        <p class="text-sm text-tertiary">Envío directo del proveedor al cliente final sin paso por tu almacén.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">star</span>
+        <h4 class="font-bold mb-2">Órdenes especiales</h4>
+        <p class="text-sm text-tertiary">Pedidos bajo demanda vinculados a clientes específicos con trazabilidad completa.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">straighten</span>
+        <h4 class="font-bold mb-2">Unidades de medida</h4>
+        <p class="text-sm text-tertiary">Múltiples unidades de medida por artículo con conversión automática entre ellas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inventario y Recuento -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary mt-1">event_repeat</span>
+            <div>
+              <h4 class="font-bold mb-1">Conteos cíclicos</h4>
+              <p class="text-sm text-tertiary">Programación de conteos de inventario cíclicos por zona, categoría o rotación para mantener la precisión sin parar operaciones.</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary mt-1">compare_arrows</span>
+            <div>
+              <h4 class="font-bold mb-1">Reconciliación</h4>
+              <p class="text-sm text-tertiary">Comparación automática entre el stock teórico y el real con identificación de discrepancias y motivos.</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary mt-1">auto_fix_high</span>
+            <div>
+              <h4 class="font-bold mb-1">Ajustes automáticos</h4>
+              <p class="text-sm text-tertiary">Generación automática de ajustes de inventario con impacto contable inmediato y trazabilidad del motivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">inventory</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Recuento</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Inventario y Recuento</h2>
+        <p class="text-tertiary text-lg leading-relaxed">Conteos cíclicos programables, reconciliación automática entre stock teórico y real, y ajustes con impacto contable inmediato para mantener la máxima precisión en tu inventario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Analítica -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">bar_chart</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Analítica de Inventario</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Herramientas de análisis avanzado para prevenir roturas de stock, optimizar niveles y tomar decisiones basadas en datos.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">shield</span>
+        <h4 class="font-bold mb-3">Prevención de roturas</h4>
+        <p class="text-sm text-tertiary">Alertas predictivas para evitar roturas de stock antes de que ocurran, basadas en velocidad de consumo y lead times.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">calendar_month</span>
+        <h4 class="font-bold mb-3">Estacionalidad</h4>
+        <p class="text-sm text-tertiary">Optimización de niveles de stock basada en patrones estacionales históricos para anticipar picos y valles de demanda.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">autorenew</span>
+        <h4 class="font-bold mb-3">Análisis de rotación</h4>
+        <p class="text-sm text-tertiary">Clasificación ABC de artículos por rotación para optimizar la inversión en inventario y mejorar la liquidez.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-on-secondary-fixed text-white">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-6">Toma el control total de tu inventario</h2>
+    <p class="text-xl text-gray-400 mb-10">Descubre cómo SAP Business One te da visibilidad completa de tu stock en tiempo real con trazabilidad total y analítica avanzada.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html#contact" class="px-10 py-5 bg-primary-container text-white font-bold text-lg rounded-lg shadow-2xl hover:bg-primary transition-all inline-flex items-center gap-3 justify-center">
+        Solicita una demo gratuita
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a href="modules.html" class="px-10 py-5 border border-white/20 text-white font-semibold text-lg rounded-lg hover:bg-white/5 transition-all inline-flex items-center gap-3 justify-center">
+        Ver todos los módulos
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 px-8">
+  <div class="max-w-7xl mx-auto mb-16">
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 border-b border-outline-variant/10 pb-12 opacity-70">
+      <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Global Partners</span>
+      <span class="font-bold text-on-surface">SAP Gold</span>
+      <span class="font-bold text-on-surface">AWS</span>
+      <span class="font-bold text-on-surface">Microsoft</span>
+      <span class="font-bold text-on-surface">Oracle</span>
+      <span class="font-bold text-on-surface">Google Cloud</span>
+      <span class="font-bold text-on-surface">IBM</span>
+      <span class="font-bold text-on-surface">Salesforce</span>
+      <span class="font-bold text-on-surface">IFS</span>
+      <span class="font-bold text-on-surface">SAS</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <div class="space-y-6">
+      <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      <p class="text-gray-600 text-sm leading-relaxed">Expertos en implementación de sistemas de gestión empresarial y transformación digital a nivel global.</p>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Servicios</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Consultoría ERP</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Desarrollo Custom</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Soporte 24/7</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Formación SAP</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Compañía</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Careers</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Blog</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Privacy Policy</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Legal</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Contacto</h5>
+      <ul class="space-y-2">
+        <li class="text-gray-600 text-sm">+351 213 504 870</li>
+        <li class="text-gray-600 text-sm">timestamp@timestampgroup.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10 text-center">
+    <p class="text-sm text-tertiary">&copy; 2026 Timestamp Group. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>

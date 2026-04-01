@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Producción y MRP | SAP Business One - Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-tertiary-container": "#f8f6f6",
+            "inverse-surface": "#2f3131",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3f3",
+            "primary": "#b5000b",
+            "surface-dim": "#dadada",
+            "surface-container-high": "#e8e8e8",
+            "background": "#f9f9f9",
+            "secondary": "#5d5c74",
+            "surface-container-highest": "#e2e2e2",
+            "on-primary-container": "#fff5f3",
+            "surface-variant": "#e2e2e2",
+            "primary-container": "#e30613",
+            "outline-variant": "#e9bcb6",
+            "on-primary-fixed": "#410001",
+            "inverse-primary": "#ffb4aa",
+            "secondary-fixed-dim": "#c6c4df",
+            "secondary-container": "#e2e0fc",
+            "surface-bright": "#f9f9f9",
+            "tertiary-fixed": "#e4e2e2",
+            "on-secondary-fixed-variant": "#45455b",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#595959",
+            "on-background": "#1a1c1c",
+            "on-tertiary-fixed-variant": "#464747",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdad5",
+            "tertiary-container": "#717171",
+            "on-surface-variant": "#5e3f3b",
+            "primary-fixed-dim": "#ffb4aa",
+            "outline": "#936e69",
+            "surface-container": "#eeeeee",
+            "on-primary-fixed-variant": "#930007",
+            "on-secondary-fixed": "#1a1a2e",
+            "surface": "#f9f9f9",
+            "secondary-fixed": "#e2e0fc",
+            "on-secondary-container": "#63627a",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "inverse-on-surface": "#f1f1f1",
+            "error": "#ba1a1a",
+            "surface-tint": "#c0000c",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em]" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="relative py-32 overflow-hidden bg-on-secondary-fixed">
+  <div class="absolute inset-0 bg-gradient-to-br from-on-secondary-fixed via-on-secondary-fixed/90 to-primary/20"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8">
+    <a href="modules.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      <span class="text-sm">Volver a Módulos</span>
+    </a>
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-container mb-6">
+      <span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+      <span class="text-xs uppercase tracking-[0.15em] font-semibold">Módulo de Producción</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+      Producción y MRP
+    </h1>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+      Planifica, ejecuta y controla tu producción con precisión industrial.
+    </p>
+  </div>
+</section>
+
+<!-- Listas de Materiales (BOM) -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">account_tree</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">BOM</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Listas de Materiales (BOM)</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Define la estructura completa de tus productos con BOMs multinivel que incluyen sub-componentes, cantidades, recursos y texto descriptivo, con mantenimiento global de precios.</p>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
+        <h4 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">widgets</span>
+          Producto Final: Mesa Industrial X-200
+        </h4>
+        <div class="space-y-3 ml-4">
+          <div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg">
+            <span class="text-xs font-mono text-tertiary w-8">L1</span>
+            <span class="material-symbols-outlined text-primary text-[18px]">category</span>
+            <span class="text-sm font-medium">Estructura metálica (1 ud)</span>
+          </div>
+          <div class="ml-8 space-y-2">
+            <div class="flex items-center gap-3 p-2 bg-surface-container-high/50 rounded-lg">
+              <span class="text-xs font-mono text-tertiary w-8">L2</span>
+              <span class="material-symbols-outlined text-tertiary text-[18px]">circle</span>
+              <span class="text-sm text-tertiary">Tubo acero 40x40 (4.2 m)</span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-surface-container-high/50 rounded-lg">
+              <span class="text-xs font-mono text-tertiary w-8">L2</span>
+              <span class="material-symbols-outlined text-tertiary text-[18px]">circle</span>
+              <span class="text-sm text-tertiary">Tornillería M8 (16 uds)</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg">
+            <span class="text-xs font-mono text-tertiary w-8">L1</span>
+            <span class="material-symbols-outlined text-primary text-[18px]">category</span>
+            <span class="text-sm font-medium">Tablero superficie (1 ud)</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg">
+            <span class="text-xs font-mono text-tertiary w-8">L1</span>
+            <span class="material-symbols-outlined text-primary text-[18px]">engineering</span>
+            <span class="text-sm font-medium">Recurso: Soldadura (0.5 h)</span>
+          </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-outline-variant/10 flex justify-between text-sm">
+          <span class="text-tertiary">Coste BOM estimado:</span>
+          <span class="font-bold">187.50 EUR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Órdenes de Producción -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">factory</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Órdenes de Producción</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Gestión completa de órdenes de producción con diferentes tipos, control de prioridad, seguimiento de calidad y registro detallado de cantidades.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <h4 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">list_alt</span>
+          Tipos de orden
+        </h4>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+            <span class="w-3 h-3 bg-primary-container rounded-full"></span>
+            <div>
+              <span class="font-semibold text-sm">Estándar</span>
+              <p class="text-xs text-tertiary">Producción regular según planificación</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+            <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+            <div>
+              <span class="font-semibold text-sm">Especial</span>
+              <p class="text-xs text-tertiary">Pedidos bajo demanda o personalizados</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+            <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+            <div>
+              <span class="font-semibold text-sm">Desmontaje</span>
+              <p class="text-xs text-tertiary">Descomposición de producto en componentes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <h4 class="font-bold mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">tune</span>
+          Control y seguimiento
+        </h4>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">check_circle</span>
+            <span class="text-sm text-tertiary">Prioridad, estado y fecha límite configurables por orden</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">check_circle</span>
+            <span class="text-sm text-tertiary">Registro de cantidad completada y rechazada con motivo</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">check_circle</span>
+            <span class="text-sm text-tertiary">Control de calidad integrado en el proceso de producción</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">check_circle</span>
+            <span class="text-sm text-tertiary">Trazabilidad completa de materiales consumidos</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Planificación MRP -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-on-secondary-fixed p-10 rounded-2xl text-white">
+          <h4 class="text-lg font-bold mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined">settings_suggest</span>
+            Motor MRP
+          </h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 py-3 border-b border-white/10">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">calculate</span>
+              <div>
+                <p class="font-semibold text-sm">Algoritmos de cálculo</p>
+                <p class="text-xs text-gray-400">Cálculo de necesidades de materiales y recursos simultáneamente</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 py-3 border-b border-white/10">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">layers</span>
+              <div>
+                <p class="font-semibold text-sm">Necesidades brutas por nivel de BOM</p>
+                <p class="text-xs text-gray-400">Explosión multinivel para calcular requerimientos exactos</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 py-3">
+              <span class="material-symbols-outlined text-primary-container mt-0.5">input</span>
+              <div>
+                <p class="font-semibold text-sm">Fuentes de demanda</p>
+                <p class="text-xs text-gray-400">Pedidos de venta, órdenes de producción y previsiones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">settings_suggest</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">MRP</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Planificación MRP</h2>
+        <p class="text-tertiary text-lg leading-relaxed">Algoritmos avanzados de cálculo de materiales y recursos que analizan cada nivel de la lista de materiales para determinar las necesidades exactas basándose en pedidos de venta, órdenes de producción y previsiones de demanda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Previsión de Demanda -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">trending_up</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Previsión de Demanda</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Herramientas de forecasting avanzado y análisis what-if para anticipar la demanda y tomar decisiones de producción basadas en datos.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">auto_graph</span>
+        <h4 class="font-bold mb-2">Forecasting avanzado</h4>
+        <p class="text-sm text-tertiary">Modelos de previsión basados en datos históricos, estacionalidad y tendencias del mercado.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">science</span>
+        <h4 class="font-bold mb-2">Análisis what-if</h4>
+        <p class="text-sm text-tertiary">Simulación de escenarios para evaluar el impacto de cambios en demanda, precios o capacidad.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">qr_code_scanner</span>
+        <h4 class="font-bold mb-2">Lot tracking</h4>
+        <p class="text-sm text-tertiary">Seguimiento de lotes de producción con trazabilidad completa de materiales utilizados.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">psychology</span>
+        <h4 class="font-bold mb-2">Decisiones basadas en datos</h4>
+        <p class="text-sm text-tertiary">Soporte a la toma de decisiones con dashboards de producción y KPIs en tiempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Control de Producción -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Control</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Control de Producción</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Monitorización en tiempo real de todos los recursos y procesos de producción con seguimiento de progreso y análisis detallado de costes.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Monitorización de recursos en tiempo real: máquinas, operarios y materiales</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Seguimiento del progreso de cada orden de producción</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Análisis de costes de producción: planificado vs. real</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-bold text-sm">OP-2026-0421 - Mesa X-200</span>
+            <span class="px-3 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-full">En curso</span>
+          </div>
+          <div class="w-full bg-surface-container-high rounded-full h-3 mb-2">
+            <div class="bg-primary-container h-3 rounded-full" style="width: 72%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-tertiary">
+            <span>72% completado</span>
+            <span>180/250 uds</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-bold text-sm">OP-2026-0422 - Silla S-100</span>
+            <span class="px-3 py-1 bg-yellow-50 text-yellow-700 text-xs font-bold rounded-full">Planificada</span>
+          </div>
+          <div class="w-full bg-surface-container-high rounded-full h-3 mb-2">
+            <div class="bg-yellow-400 h-3 rounded-full" style="width: 15%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-tertiary">
+            <span>15% materiales reservados</span>
+            <span>0/500 uds</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-bold text-sm">OP-2026-0420 - Estante E-50</span>
+            <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full">Completada</span>
+          </div>
+          <div class="w-full bg-surface-container-high rounded-full h-3 mb-2">
+            <div class="bg-blue-500 h-3 rounded-full" style="width: 100%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-tertiary">
+            <span>100% completado</span>
+            <span>120/120 uds - 2 rechazadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integración -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">hub</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Integración Nativa</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">La producción se integra de forma nativa con ventas, compras e inventario para un flujo de trabajo totalmente automatizado.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">shopping_cart</span>
+        <h4 class="font-bold mb-3">Ventas a Producción</h4>
+        <p class="text-sm text-tertiary">Los pedidos de venta generan órdenes de producción automáticamente cuando el stock es insuficiente, garantizando el cumplimiento de plazos.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">local_shipping</span>
+        <h4 class="font-bold mb-3">MRP a Compras</h4>
+        <p class="text-sm text-tertiary">Las recomendaciones del MRP activan automáticamente pedidos de compra a proveedores para los materiales necesarios.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">inventory_2</span>
+        <h4 class="font-bold mb-3">Producción a Inventario</h4>
+        <p class="text-sm text-tertiary">Los movimientos de inventario se actualizan automáticamente: consumo de materias primas y entrada de producto terminado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-on-secondary-fixed text-white">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-6">Lleva tu producción al siguiente nivel</h2>
+    <p class="text-xl text-gray-400 mb-10">Descubre cómo SAP Business One te permite planificar, ejecutar y controlar tu producción con la precisión que tu industria exige.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html#contact" class="px-10 py-5 bg-primary-container text-white font-bold text-lg rounded-lg shadow-2xl hover:bg-primary transition-all inline-flex items-center gap-3 justify-center">
+        Solicita una demo gratuita
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a href="modules.html" class="px-10 py-5 border border-white/20 text-white font-semibold text-lg rounded-lg hover:bg-white/5 transition-all inline-flex items-center gap-3 justify-center">
+        Ver todos los módulos
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 px-8">
+  <div class="max-w-7xl mx-auto mb-16">
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 border-b border-outline-variant/10 pb-12 opacity-70">
+      <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Global Partners</span>
+      <span class="font-bold text-on-surface">SAP Gold</span>
+      <span class="font-bold text-on-surface">AWS</span>
+      <span class="font-bold text-on-surface">Microsoft</span>
+      <span class="font-bold text-on-surface">Oracle</span>
+      <span class="font-bold text-on-surface">Google Cloud</span>
+      <span class="font-bold text-on-surface">IBM</span>
+      <span class="font-bold text-on-surface">Salesforce</span>
+      <span class="font-bold text-on-surface">IFS</span>
+      <span class="font-bold text-on-surface">SAS</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <div class="space-y-6">
+      <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      <p class="text-gray-600 text-sm leading-relaxed">Expertos en implementación de sistemas de gestión empresarial y transformación digital a nivel global.</p>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Servicios</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Consultoría ERP</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Desarrollo Custom</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Soporte 24/7</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Formación SAP</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Compañía</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Careers</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Blog</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Privacy Policy</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Legal</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Contacto</h5>
+      <ul class="space-y-2">
+        <li class="text-gray-600 text-sm">+351 213 504 870</li>
+        <li class="text-gray-600 text-sm">timestamp@timestampgroup.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10 text-center">
+    <p class="text-sm text-tertiary">&copy; 2026 Timestamp Group. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>

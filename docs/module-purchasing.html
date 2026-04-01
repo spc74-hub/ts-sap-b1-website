@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compras y Aprovisionamiento | SAP Business One - Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-tertiary-container": "#f8f6f6",
+            "inverse-surface": "#2f3131",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3f3",
+            "primary": "#b5000b",
+            "surface-dim": "#dadada",
+            "surface-container-high": "#e8e8e8",
+            "background": "#f9f9f9",
+            "secondary": "#5d5c74",
+            "surface-container-highest": "#e2e2e2",
+            "on-primary-container": "#fff5f3",
+            "surface-variant": "#e2e2e2",
+            "primary-container": "#e30613",
+            "outline-variant": "#e9bcb6",
+            "on-primary-fixed": "#410001",
+            "inverse-primary": "#ffb4aa",
+            "secondary-fixed-dim": "#c6c4df",
+            "secondary-container": "#e2e0fc",
+            "surface-bright": "#f9f9f9",
+            "tertiary-fixed": "#e4e2e2",
+            "on-secondary-fixed-variant": "#45455b",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#595959",
+            "on-background": "#1a1c1c",
+            "on-tertiary-fixed-variant": "#464747",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdad5",
+            "tertiary-container": "#717171",
+            "on-surface-variant": "#5e3f3b",
+            "primary-fixed-dim": "#ffb4aa",
+            "outline": "#936e69",
+            "surface-container": "#eeeeee",
+            "on-primary-fixed-variant": "#930007",
+            "on-secondary-fixed": "#1a1a2e",
+            "surface": "#f9f9f9",
+            "secondary-fixed": "#e2e0fc",
+            "on-secondary-container": "#63627a",
+            "on-primary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "inverse-on-surface": "#f1f1f1",
+            "error": "#ba1a1a",
+            "surface-tint": "#c0000c",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em]" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="relative py-32 overflow-hidden bg-on-secondary-fixed">
+  <div class="absolute inset-0 bg-gradient-to-br from-on-secondary-fixed via-on-secondary-fixed/90 to-primary/20"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8">
+    <a href="modules.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      <span class="text-sm">Volver a Módulos</span>
+    </a>
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-container mb-6">
+      <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+      <span class="text-xs uppercase tracking-[0.15em] font-semibold">Módulo de Compras</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+      Compras y Aprovisionamiento
+    </h1>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+      Optimiza tu cadena de suministro con procesos de compra automatizados e inteligentes.
+    </p>
+  </div>
+</section>
+
+<!-- Ciclo de Compras -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">swap_horiz</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Proceso de compra</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Ciclo de Compras</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Un ciclo de compras completo y trazable, desde la solicitud inicial hasta la recepción de mercancía, con enlace automático entre documentos y pistas de auditoría en cada paso.</p>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary font-bold">1</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">Solicitud de compra</p>
+              <p class="text-xs text-tertiary">Petición interna con flujo de aprobación</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary font-bold">2</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">Pedido de compra</p>
+              <p class="text-xs text-tertiary">Orden formal al proveedor</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary font-bold">3</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">Recepción de mercancía</p>
+              <p class="text-xs text-tertiary">Entrada en almacén con verificación</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-primary font-bold">4</span>
+            </div>
+            <div>
+              <p class="font-bold text-sm">Enlace de documentos</p>
+              <p class="text-xs text-tertiary">Trazabilidad completa con pistas de auditoría</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gestión de Proveedores -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">storefront</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Gestión de Proveedores</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Evalúa y gestiona a tus proveedores con datos objetivos para tomar las mejores decisiones de aprovisionamiento.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">compare</span>
+        <h4 class="font-bold mb-2">Evaluación comparativa</h4>
+        <p class="text-sm text-tertiary">Comparación de proveedores con datos objetivos de precio, calidad, plazo de entrega y fiabilidad.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">speed</span>
+        <h4 class="font-bold mb-2">Análisis de rendimiento</h4>
+        <p class="text-sm text-tertiary">Métricas de rendimiento por proveedor: cumplimiento de plazos, calidad y condiciones pactadas.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">request_quote</span>
+        <h4 class="font-bold mb-2">Solicitud de cotizaciones</h4>
+        <p class="text-sm text-tertiary">Envío de solicitudes de presupuesto a múltiples proveedores con comparación automática de ofertas.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary mb-3 block">database</span>
+        <h4 class="font-bold mb-2">Base de datos centralizada</h4>
+        <p class="text-sm text-tertiary">Toda la información de proveedores en un único lugar: contactos, condiciones, historial y documentación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Control Presupuestario -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+            <span class="material-symbols-outlined text-primary mb-3 block">monitoring</span>
+            <h4 class="font-bold mb-2">Monitorización de desviaciones</h4>
+            <p class="text-sm text-tertiary">Alertas en tiempo real cuando los gastos se desvían del presupuesto aprobado.</p>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+            <span class="material-symbols-outlined text-primary mb-3 block">approval</span>
+            <h4 class="font-bold mb-2">Políticas de aprobación</h4>
+            <p class="text-sm text-tertiary">Flujos de aprobación multinivel configurables por importe, categoría o centro de coste.</p>
+          </div>
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm sm:col-span-2">
+            <span class="material-symbols-outlined text-primary mb-3 block">add_shopping_cart</span>
+            <h4 class="font-bold mb-2">Gestión de gastos adicionales</h4>
+            <p class="text-sm text-tertiary">Control de gastos extra como portes, seguros y otros costes asociados a las compras con imputación automática al coste del producto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">savings</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Presupuestos</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Control Presupuestario</h2>
+        <p class="text-tertiary text-lg leading-relaxed">Monitoriza desviaciones en tiempo real, configura políticas de aprobación multinivel y gestiona todos los gastos adicionales asociados a tus compras para mantener el control total del gasto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Devoluciones y Reclamaciones -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">assignment_return</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Devoluciones y Reclamaciones</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Gestión completa del proceso de devoluciones a proveedores, desde la incidencia hasta la resolución.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">undo</span>
+        <h4 class="font-bold mb-3">Gestión de devoluciones</h4>
+        <p class="text-sm text-tertiary">Proceso completo de devolución de mercancía a proveedores con trazabilidad del motivo y estado.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">receipt</span>
+        <h4 class="font-bold mb-3">Notas de crédito</h4>
+        <p class="text-sm text-tertiary">Generación automática de notas de crédito vinculadas a las devoluciones con impacto contable inmediato.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm text-center">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">track_changes</span>
+        <h4 class="font-bold mb-3">Seguimiento de incidencias</h4>
+        <p class="text-sm text-tertiary">Registro y seguimiento de todas las incidencias con proveedores para análisis de calidad y negociación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Operaciones Internacionales -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">public</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Internacional</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Operaciones Internacionales</h2>
+        <p class="text-tertiary text-lg leading-relaxed mb-8">Soporte completo para operaciones de compra internacionales con gestión multicurrency, portes y documentación de importación.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Manejo multicurrency con conversión automática de tipos de cambio</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Gestión de portes y gastos de transporte internacional</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+            <span class="text-tertiary">Documentación de importación: DUA, certificados de origen, permisos</span>
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-1">currency_exchange</span>
+          <div>
+            <h4 class="font-bold mb-1">Multicurrency</h4>
+            <p class="text-sm text-tertiary">Trabaja con múltiples divisas simultáneamente con conversión automática y gestión de diferencias de cambio.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-1">local_shipping</span>
+          <div>
+            <h4 class="font-bold mb-1">Gestión de portes</h4>
+            <p class="text-sm text-tertiary">Imputación de costes de transporte al coste del producto con distribución automática entre líneas.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary mt-1">description</span>
+          <div>
+            <h4 class="font-bold mb-1">Documentación de importación</h4>
+            <p class="text-sm text-tertiary">Registro y gestión de toda la documentación necesaria para operaciones de comercio exterior.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integración con MRP -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="material-symbols-outlined text-primary text-4xl mb-4 block">settings_suggest</span>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Integración con MRP</h2>
+      <p class="text-tertiary max-w-2xl mx-auto">Las compras se integran nativamente con la planificación de requerimientos de materiales para automatizar el aprovisionamiento basado en la demanda real.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">calculate</span>
+        <h4 class="font-bold mb-3">Planificación de requerimientos</h4>
+        <p class="text-sm text-tertiary">Cálculo automático de necesidades de materiales basado en pedidos de venta, órdenes de producción y previsiones de demanda.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">auto_fix_high</span>
+        <h4 class="font-bold mb-3">Pedidos automáticos</h4>
+        <p class="text-sm text-tertiary">Generación automática de pedidos de compra basados en las recomendaciones del MRP con aprobación configurable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Digitalización -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-on-secondary-fixed p-10 rounded-2xl text-white">
+          <h4 class="text-lg font-bold mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined">devices</span>
+            Compras 100% Digitales
+          </h4>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 py-3 border-b border-white/10">
+              <span class="material-symbols-outlined text-primary-container">approval</span>
+              <span>Flujos de aprobación digitales multinivel</span>
+            </div>
+            <div class="flex items-center gap-3 py-3 border-b border-white/10">
+              <span class="material-symbols-outlined text-primary-container">forward_to_inbox</span>
+              <span>Pedidos enviados por email automáticamente</span>
+            </div>
+            <div class="flex items-center gap-3 py-3">
+              <span class="material-symbols-outlined text-primary-container">eco</span>
+              <span>Eliminación total del papel en el proceso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">cloud_sync</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary">Digital</span>
+        </div>
+        <h2 class="text-3xl font-bold tracking-tight mb-6">Digitalización</h2>
+        <p class="text-tertiary text-lg leading-relaxed">Elimina el papel y digitaliza todo el proceso de compras con flujos de aprobación electrónicos, envío automático de pedidos por email y archivo digital de toda la documentación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-on-secondary-fixed text-white">
+  <div class="max-w-4xl mx-auto px-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-6">Optimiza tu cadena de suministro</h2>
+    <p class="text-xl text-gray-400 mb-10">Descubre cómo SAP Business One puede automatizar tus compras, mejorar la relación con proveedores y reducir costes operativos.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html#contact" class="px-10 py-5 bg-primary-container text-white font-bold text-lg rounded-lg shadow-2xl hover:bg-primary transition-all inline-flex items-center gap-3 justify-center">
+        Solicita una demo gratuita
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a href="modules.html" class="px-10 py-5 border border-white/20 text-white font-semibold text-lg rounded-lg hover:bg-white/5 transition-all inline-flex items-center gap-3 justify-center">
+        Ver todos los módulos
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 px-8">
+  <div class="max-w-7xl mx-auto mb-16">
+    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 border-b border-outline-variant/10 pb-12 opacity-70">
+      <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Global Partners</span>
+      <span class="font-bold text-on-surface">SAP Gold</span>
+      <span class="font-bold text-on-surface">AWS</span>
+      <span class="font-bold text-on-surface">Microsoft</span>
+      <span class="font-bold text-on-surface">Oracle</span>
+      <span class="font-bold text-on-surface">Google Cloud</span>
+      <span class="font-bold text-on-surface">IBM</span>
+      <span class="font-bold text-on-surface">Salesforce</span>
+      <span class="font-bold text-on-surface">IFS</span>
+      <span class="font-bold text-on-surface">SAS</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <div class="space-y-6">
+      <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      <p class="text-gray-600 text-sm leading-relaxed">Expertos en implementación de sistemas de gestión empresarial y transformación digital a nivel global.</p>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Servicios</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Consultoría ERP</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Desarrollo Custom</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Soporte 24/7</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="services.html">Formación SAP</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Compañía</h5>
+      <ul class="space-y-2">
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Careers</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Blog</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Privacy Policy</a></li>
+        <li><a class="text-gray-600 hover:text-[#E30613] transition-colors text-sm" href="#">Legal</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h5 class="text-xs uppercase tracking-widest font-bold text-on-surface">Contacto</h5>
+      <ul class="space-y-2">
+        <li class="text-gray-600 text-sm">+351 213 504 870</li>
+        <li class="text-gray-600 text-sm">timestamp@timestampgroup.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10 text-center">
+    <p class="text-sm text-tertiary">&copy; 2026 Timestamp Group. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
