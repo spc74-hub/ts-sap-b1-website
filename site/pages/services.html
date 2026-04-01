@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Timestamp Group | SAP Certified Gold Partner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dadada",
+              "surface": "#f9f9f9",
+              "on-primary-fixed-variant": "#930007",
+              "on-secondary-container": "#63627a",
+              "secondary-fixed": "#e2e0fc",
+              "primary-fixed-dim": "#ffb4aa",
+              "on-tertiary-container": "#f8f6f6",
+              "surface-variant": "#e2e2e2",
+              "on-background": "#1a1c1c",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#410001",
+              "on-tertiary-fixed-variant": "#464747",
+              "on-secondary-fixed": "#1a1a2e",
+              "on-primary": "#ffffff",
+              "primary-container": "#e30613",
+              "on-tertiary-fixed": "#1b1c1c",
+              "tertiary": "#595959",
+              "outline": "#936e69",
+              "on-primary-container": "#fff5f3",
+              "secondary": "#5d5c74",
+              "inverse-primary": "#ffb4aa",
+              "on-error": "#ffffff",
+              "outline-variant": "#e9bcb6",
+              "surface-container": "#eeeeee",
+              "secondary-fixed-dim": "#c6c4df",
+              "on-surface-variant": "#5e3f3b",
+              "primary": "#b5000b",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#c7c6c6",
+              "on-surface": "#1a1c1c",
+              "surface-tint": "#c0000c",
+              "surface-container-high": "#e8e8e8",
+              "tertiary-container": "#717171",
+              "surface-container-low": "#f3f3f3",
+              "surface-container-highest": "#e2e2e2",
+              "on-secondary-fixed-variant": "#45455b",
+              "inverse-surface": "#2f3131",
+              "inverse-on-surface": "#f1f1f1",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#ffdad5",
+              "secondary-container": "#e2e0fc",
+              "surface-bright": "#f9f9f9",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "background": "#f9f9f9",
+              "tertiary-fixed": "#e4e2e2"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f9f9f9 0%, #f3f3f3 100%);
+        }
+        .text-editorial {
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        /* Custom scrollbar for horizontal timeline */
+        .timeline-scroll::-webkit-scrollbar {
+            height: 2px;
+        }
+        .timeline-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .timeline-scroll::-webkit-scrollbar-thumb {
+            background: #b5000b;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-gradient">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+<img class="w-full h-full object-cover grayscale" data-alt="Modern architectural building with clean glass lines and minimalist concrete structures in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYBki-9FW1VgoYC1YKniq6txRrsJuB1V1eICfoKYd0UZUU9SWg5qeKDBnsACgO1Ygc5zSSP1xSGX4shrBdVqymLRH-xrKVSgqbo406128D_rJwvtSnQrNtd-UPVORt6NgpnrSsJbnI7awgl_D1fYSkB-4MFZVT6-metSi6jEJgOQr2CEpM3jq82Oxy0o9UtAuITlNrjWpLNE7xrzPpb084-t0MqXrzGVGtxU80zJXMYJMvEfRjc_7jbdoS7fDMGPF2_AILZXE7pMY"/>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8 space-y-8">
+<div class="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-full border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="verified" data-weight="fill">verified</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface">SAP Certified Gold Partner</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black text-on-surface text-editorial tracking-tighter">
+                    Tu partner de confianza para <span class="text-primary">SAP Business One</span>
+</h1>
+<p class="text-xl md:text-2xl text-slate-600 max-w-3xl font-light leading-relaxed">
+                    Desde la consultoría inicial hasta el soporte 24/7, <span class="font-medium text-on-surface">Timestamp Group</span> te acompaña en cada fase de tu transformación digital con más de 25 años de experiencia.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        Hablar con un consultor
+                    </button>
+<button class="bg-white text-on-surface border border-outline-variant/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-low transition-all duration-300">
+                        Ver metodología
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-4 hidden lg:block">
+<div class="relative p-8 bg-white/40 backdrop-blur-md rounded-2xl border border-white/50 shadow-2xl">
+<div class="space-y-6">
+<div class="h-2 w-20 bg-primary"></div>
+<p class="font-bold text-3xl tracking-tight">Precision Architecture</p>
+<p class="text-slate-500 font-light italic">"Designing the digital backbone of premier technology consultancies."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Metodología -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="mb-20">
+<span class="text-primary text-xs font-black tracking-[0.2em] uppercase">Nuestro Proceso</span>
+<h2 class="text-4xl md:text-5xl font-black mt-4 text-editorial">Metodología de Implementación</h2>
+</div>
+<div class="relative">
+<div class="absolute top-1/2 left-0 w-full h-px bg-slate-200 -z-10 hidden md:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-8 overflow-x-auto pb-8 timeline-scroll">
+<!-- Step 1 -->
+<div class="min-w-[250px] group">
+<div class="bg-white p-8 rounded-2xl border border-transparent group-hover:border-primary/20 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+<div class="w-12 h-12 bg-surface-container-low flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-widest block mb-2">FASE 1</span>
+<h3 class="font-bold text-lg mb-3">Diagnóstico y Consultoría</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Análisis exhaustivo de procesos actuales e identificación de cuellos de botella para una base sólida.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="min-w-[250px] group mt-0 md:mt-12">
+<div class="bg-white p-8 rounded-2xl border border-transparent group-hover:border-primary/20 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+<div class="w-12 h-12 bg-surface-container-low flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-widest block mb-2">FASE 2</span>
+<h3 class="font-bold text-lg mb-3">Diseño de Solución</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Arquitectura técnica personalizada alineada con los objetivos estratégicos de su negocio.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="min-w-[250px] group">
+<div class="bg-white p-8 rounded-2xl border border-transparent group-hover:border-primary/20 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+<div class="w-12 h-12 bg-surface-container-low flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="code_blocks">code_blocks</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-widest block mb-2">FASE 3</span>
+<h3 class="font-bold text-lg mb-3">Desarrollo</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Configuración y personalización del core de SAP Business One para maximizar la eficiencia.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="min-w-[250px] group mt-0 md:mt-12">
+<div class="bg-white p-8 rounded-2xl border border-transparent group-hover:border-primary/20 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+<div class="w-12 h-12 bg-surface-container-low flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-widest block mb-2">FASE 4</span>
+<h3 class="font-bold text-lg mb-3">Migración de Datos</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Transferencia segura e íntegra de la información histórica de su empresa al nuevo ecosistema.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="min-w-[250px] group">
+<div class="bg-white p-8 rounded-2xl border border-transparent group-hover:border-primary/20 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+<div class="w-12 h-12 bg-surface-container-low flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-widest block mb-2">FASE 5</span>
+<h3 class="font-bold text-lg mb-3">Formación y Go-Live</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Capacitación de equipos y lanzamiento controlado garantizando la continuidad operativa.</p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="min-w-[250px] group mt-0 md:mt-12">
+<div class="bg-white p-8 rounded-2xl border border-transparent group-hover:border-primary/20 shadow-sm group-hover:shadow-xl transition-all duration-500 relative">
+<div class="w-12 h-12 bg-surface-container-low flex items-center justify-center rounded-xl mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-widest block mb-2">FASE 6</span>
+<h3 class="font-bold text-lg mb-3">Soporte Continuo</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Acompañamiento post-lanzamiento y optimización evolutiva para el crecimiento sostenido.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Modelos de Contratación -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-black text-editorial">Modelos de Contratación</h2>
+<p class="mt-6 text-slate-500 max-w-2xl mx-auto">Adaptabilidad total a la estructura y necesidades financieras de su organización.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 hover:border-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-6 text-3xl" data-icon="schedule">schedule</span>
+<h3 class="text-xl font-bold mb-4">Time and Materials</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Flexibilidad total para proyectos de alcance variable o consultoría puntual bajo demanda.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 hover:border-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-6 text-3xl" data-icon="assignment">assignment</span>
+<h3 class="text-xl font-bold mb-4">Proyecto (Precio Cerrado)</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Seguridad y control presupuestario con alcances y plazos definidos contractualmente.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 hover:border-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-6 text-3xl" data-icon="settings_suggest">settings_suggest</span>
+<h3 class="text-xl font-bold mb-4">Managed Services</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Externalización estratégica de la gestión técnica y operativa de su entorno SAP.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 hover:border-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-6 text-3xl" data-icon="public">public</span>
+<h3 class="text-xl font-bold mb-4">Near Shore</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Acceso a talento especializado en zonas horarias cercanas para una integración fluida.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 hover:border-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-6 text-3xl" data-icon="factory">factory</span>
+<h3 class="text-xl font-bold mb-4">Software Factory</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Capacidad de desarrollo escalable y procesos estandarizados para entrega continua.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 hover:border-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-6 text-3xl" data-icon="account_tree">account_tree</span>
+<h3 class="text-xl font-bold mb-4">PMO / Project Management</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Gobernanza y dirección de proyectos de alta complejidad bajo estándares internacionales.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Servicios Complementarios (Bento-style Grid) -->
+<section class="py-32 bg-white">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="mb-20">
+<span class="text-primary text-xs font-black tracking-[0.2em] uppercase">Ecosistema Extendido</span>
+<h2 class="text-4xl md:text-5xl font-black mt-4 text-editorial">Servicios Complementarios</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Bloque 1 -->
+<div class="group relative overflow-hidden rounded-3xl bg-slate-900 text-white p-12 min-h-[400px] flex flex-col justify-between">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract visualization of neural networks and data processing nodes in deep blue and glowing white light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUSBJyKnOTU9B-0sp25RYnMwiHBz5KQ4zv2B1xAuemINMhsz_AhfFo3oIfYS38tDDbI4shipiMORL2zf54oZ2NintlmOCUf8STMqYomZhQP6Icx9uf683v8tcuBTsDf8UhUBtRgUnmzu_kLDbNdR9fteiIbg7NQ5hhhl11HDJjOGKWxRnI0G5bp26fYc1rOp4-3OuzwJEJklqirfgYWb4Kyc7e_fLZvcYjhVLz461Qk-bjPfr8XFIZwOnX8seRXBec1r8eW3UDYzc"/>
+<div class="relative z-10">
+<div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="text-4xl font-bold mb-4">Data and AI</h3>
+<p class="text-slate-300 max-w-md text-lg leading-relaxed">Potencie su toma de decisiones con Machine Learning e Inteligencia Artificial generativa integrada en su ERP.</p>
+</div>
+<div class="relative z-10 flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-white/10 rounded-full text-xs font-medium backdrop-blur-md">Machine Learning</span>
+<span class="px-4 py-1.5 bg-white/10 rounded-full text-xs font-medium backdrop-blur-md">IA Generativa</span>
+<span class="px-4 py-1.5 bg-white/10 rounded-full text-xs font-medium backdrop-blur-md">Predictive Analytics</span>
+</div>
+</div>
+<!-- Bloque 2 -->
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container-low p-12 min-h-[400px] flex flex-col justify-between">
+<div class="relative z-10">
+<div class="w-14 h-14 bg-on-surface rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="cloud">cloud</span>
+</div>
+<h3 class="text-4xl font-bold mb-4">Cloud &amp; Infra</h3>
+<p class="text-slate-500 max-w-md text-lg leading-relaxed">Migración y gestión de infraestructuras críticas en los principales proveedores de nube pública.</p>
+</div>
+<div class="relative z-10 flex flex-wrap gap-4 items-end justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-on-surface text-white rounded-full text-xs font-medium">AWS</span>
+<span class="px-4 py-1.5 bg-on-surface text-white rounded-full text-xs font-medium">Azure</span>
+<span class="px-4 py-1.5 bg-on-surface text-white rounded-full text-xs font-medium">GCP</span>
+</div>
+<span class="text-on-surface font-bold text-sm underline underline-offset-4">Disaster Recovery Services</span>
+</div>
+</div>
+<!-- Bloque 3 -->
+<div class="group relative overflow-hidden rounded-3xl bg-surface-container-low p-12 min-h-[400px] flex flex-col justify-between lg:col-span-1">
+<div class="relative z-10">
+<div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center mb-8 shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="bolt">bolt</span>
+</div>
+<h3 class="text-4xl font-bold mb-4">Business Automation</h3>
+<p class="text-slate-500 text-lg leading-relaxed">Elimine tareas manuales mediante RPA y procesamiento inteligente de documentos.</p>
+</div>
+<div class="relative z-10 border-t border-slate-200 pt-8 mt-8 grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-bold">RPA Workflows</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-bold">OCR + IA</span>
+</div>
+</div>
+</div>
+<!-- Bloque 4 -->
+<div class="group relative overflow-hidden rounded-3xl bg-primary text-white p-12 min-h-[400px] flex flex-col justify-between lg:col-span-1">
+<div class="relative z-10">
+<div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="shield_lock">shield_lock</span>
+</div>
+<h3 class="text-4xl font-bold mb-4">Security</h3>
+<p class="text-white/80 text-lg leading-relaxed">Blindaje total de sus activos digitales y cumplimiento normativo estricto.</p>
+</div>
+<div class="relative z-10 space-y-4">
+<div class="flex justify-between items-center bg-white/10 p-4 rounded-xl">
+<span class="text-sm font-bold uppercase tracking-widest">vSOC Operations</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex justify-between items-center bg-white/10 p-4 rounded-xl">
+<span class="text-sm font-bold uppercase tracking-widest">Pentesting &amp; RGPD</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Cifras (Stats) -->
+<section class="py-32 bg-slate-950 text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 text-center lg:text-left">
+<div class="space-y-2">
+<span class="block text-5xl md:text-6xl font-black text-primary tracking-tighter">+1.200</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Profesionales</span>
+</div>
+<div class="space-y-2">
+<span class="block text-5xl md:text-6xl font-black text-white tracking-tighter">+4.000</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Certificaciones</span>
+</div>
+<div class="space-y-2">
+<span class="block text-5xl md:text-6xl font-black text-white tracking-tighter">+800</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Clientes activos</span>
+</div>
+<div class="space-y-2">
+<span class="block text-5xl md:text-6xl font-black text-white tracking-tighter">155M€</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Facturación</span>
+</div>
+<div class="space-y-2">
+<span class="block text-5xl md:text-6xl font-black text-white tracking-tighter">+25</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Años de éxito</span>
+</div>
+<div class="space-y-2">
+<span class="block text-5xl md:text-6xl font-black text-white tracking-tighter">11</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-400">Oficinas globales</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Partners -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-black text-editorial">Ecosistema de Partners</h2>
+<p class="mt-4 text-slate-500">Colaboramos con los líderes mundiales para ofrecer excelencia.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-slate-200">
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4 group">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for SAP logo -->
+<p class="text-[10px] font-bold text-primary">GOLD PARTNER</p>
+<p class="text-xs text-slate-400">Líder en soluciones ERP empresariales.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for AWS logo -->
+<p class="text-[10px] font-bold">AWS PREMIER</p>
+<p class="text-xs text-slate-400">Cloud computing escalable.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for Microsoft logo -->
+<p class="text-[10px] font-bold">GOLD CLOUD</p>
+<p class="text-xs text-slate-400">Transformación con Azure y 365.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for Oracle logo -->
+<p class="text-[10px] font-bold">PLATINUM</p>
+<p class="text-xs text-slate-400">Sistemas de bases de datos críticas.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for Google logo -->
+<p class="text-[10px] font-bold">CLOUD PARTNER</p>
+<p class="text-xs text-slate-400">Innovación y Big Data.</p>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for IBM logo -->
+<p class="text-[10px] font-bold">PARTNERWORLD</p>
+<p class="text-xs text-slate-400">Inteligencia y hardware robusto.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for Salesforce logo -->
+<p class="text-[10px] font-bold">CONSULTING</p>
+<p class="text-xs text-slate-400">Excelencia en gestión de clientes.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for IFS logo -->
+<p class="text-[10px] font-bold">SILVER</p>
+<p class="text-xs text-slate-400">ERP para industrias intensivas.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4">
+<div class="h-12 w-32 bg-slate-300/30 rounded animate-pulse"></div> <!-- Placeholder for SAS logo -->
+<p class="text-[10px] font-bold">ANALYTICS</p>
+<p class="text-xs text-slate-400">Analítica avanzada de datos.</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center justify-center text-center gap-4 bg-slate-50">
+<p class="text-sm font-bold text-slate-900">+10 más</p>
+<p class="text-[10px] uppercase tracking-widest text-slate-400">Explorar todos</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Final CTA / Form -->
+<section class="py-32 bg-white relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="text-5xl font-black text-editorial mb-8">Hablemos de tu proyecto</h2>
+<p class="text-xl text-slate-500 font-light mb-12">Nuestros expertos están listos para diseñar la arquitectura que escalará su negocio. Solicite una consultoría gratuita hoy mismo.</p>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+</div>
+<div>
+<p class="text-[10px] font-black tracking-widest text-slate-400 uppercase mb-1">Central de contacto</p>
+<p class="text-2xl font-bold">+351 213 504 870</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="text-[10px] font-black tracking-widest text-slate-400 uppercase mb-1">Email Corporativo</p>
+<p class="text-2xl font-bold">timestamp@timestampgroup.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 md:p-14 rounded-3xl border border-outline-variant/10 shadow-2xl relative">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Nombre completo</label>
+<input class="w-full bg-white border-transparent focus:border-primary focus:ring-0 rounded-xl px-4 py-4 transition-all" placeholder="Ej: Juan Pérez" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Empresa</label>
+<input class="w-full bg-white border-transparent focus:border-primary focus:ring-0 rounded-xl px-4 py-4 transition-all" placeholder="Su empresa S.A." type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Email profesional</label>
+<input class="w-full bg-white border-transparent focus:border-primary focus:ring-0 rounded-xl px-4 py-4 transition-all" placeholder="email@empresa.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Teléfono</label>
+<input class="w-full bg-white border-transparent focus:border-primary focus:ring-0 rounded-xl px-4 py-4 transition-all" placeholder="+34 000 000 000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Mensaje / Requerimiento</label>
+<textarea class="w-full bg-white border-transparent focus:border-primary focus:ring-0 rounded-xl px-4 py-4 transition-all" placeholder="Cuéntenos brevemente sobre su proyecto..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-white py-5 rounded-xl font-black text-lg uppercase tracking-widest hover:shadow-xl active:scale-[0.98] transition-all">
+                        Solicitar consultoría gratuita
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full py-12 px-8 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="font-bold text-slate-900 dark:text-white text-xl">Timestamp Group</div>
+<p class="text-slate-500 font-inter text-sm tracking-wide max-w-md">Precision Architecture in SAP Consulting. Entregando excelencia tecnológica en todo el mundo con un enfoque editorial y estructurado.</p>
+<p class="text-slate-400 font-inter text-sm tracking-wide">© 2024 Timestamp Group. Precision Architecture in SAP Consulting.</p>
+</div>
+<div class="flex flex-col md:items-end space-y-8">
+<div class="flex flex-wrap gap-8">
+<a class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors font-inter text-sm tracking-wide hover:translate-x-1 transition-transform" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors font-inter text-sm tracking-wide hover:translate-x-1 transition-transform" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors font-inter text-sm tracking-wide hover:translate-x-1 transition-transform" href="#">Cookie Settings</a>
+<a class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors font-inter text-sm tracking-wide hover:translate-x-1 transition-transform" href="#">Global Offices</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-400 cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</div>
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-400 cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

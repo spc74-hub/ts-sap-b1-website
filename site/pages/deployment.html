@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deployment Options &amp; Packages | SAP Business One - Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#c0000c",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1a1c1c",
+                        "on-surface-variant": "#5e3f3b",
+                        "primary": "#b5000b",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#c6c4df",
+                        "tertiary-fixed": "#e4e2e2",
+                        "background": "#f9f9f9",
+                        "secondary-container": "#e2e0fc",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-on-surface": "#f1f1f1",
+                        "primary-fixed": "#ffdad5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#717171",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed-variant": "#45455b",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "on-primary-fixed": "#410001",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e2e0fc",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-tertiary-container": "#f8f6f6",
+                        "on-secondary-container": "#63627a",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#930007",
+                        "secondary": "#5d5c74",
+                        "inverse-primary": "#ffb4aa",
+                        "outline-variant": "#e9bcb6",
+                        "on-error": "#ffffff",
+                        "outline": "#936e69",
+                        "on-primary-container": "#fff5f3",
+                        "primary-container": "#e30613",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-secondary-fixed": "#1a1a2e",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#595959",
+                        "on-tertiary-fixed": "#1b1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="modules.html">Modules</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+<section class="relative min-h-[716px] flex items-center px-8 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container to-on-secondary-fixed opacity-95"></div>
+<img alt="Modern architecture" class="w-full h-full object-cover mix-blend-overlay" data-alt="abstract architectural view of a glass and steel building interior with sharp lines and high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0dBafxchrdEB60MRzOUbaP7_-Ev5YSURkQmcLBsIBZk2bQ2B1JXIlIplTTgvWxlKHdhmFNGC_78Ibtv0lHEs6Pbw8u3A2Mgpf7gfHxih2ZQHbKAjKjXsdXUVcHwhS7FojXFXoRjVn4KaKiceUq9LXTPsGbaDnH-Qe3XOTuTh5sD19hIZ2H7y4NVRkgjTQK1ix8s8d0-A7BoOd0BdI4hiuLS88F5WfBSda7Ng-tbFxG00uBOVxSR1E7eItjWtytpmZGuAhNgQmZtw"/>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto w-full">
+<div class="max-w-3xl">
+<span class="label-sm text-on-primary/70 uppercase tracking-[0.2em] font-medium mb-6 block">Precisión y Flexibilidad</span>
+<h1 class="text-6xl md:text-8xl font-black text-on-primary leading-[1.05] tracking-tighter mb-8">
+                        Elige el despliegue que se adapta a tu negocio
+                    </h1>
+<p class="text-xl md:text-2xl text-on-primary/80 font-light max-w-2xl leading-relaxed">
+                        Arquitectura Cloud, On-Premise o Híbrida diseñada para la máxima eficiencia operativa de SAP Business One.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section 2: Deployment Options -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<!-- Cloud SaaS -->
+<div class="group">
+<div class="mb-10 text-primary-container">
+<span class="material-symbols-outlined text-6xl" data-icon="cloud_done">cloud_done</span>
+</div>
+<h3 class="text-3xl font-bold mb-6 tracking-tight">Cloud SaaS</h3>
+<p class="text-tertiary mb-10 leading-relaxed">Infraestructura 100% gestionada. Cero inversión en hardware, máxima escalabilidad.</p>
+<ul class="space-y-6">
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                SLA 99.9% Garantizado
+                            </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Backups Diarios Automáticos
+                            </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Actualizaciones Transparentes
+                            </li>
+<li class="pt-6 border-t border-surface-container-high text-xs uppercase tracking-widest text-tertiary">Ideal para Startups y Pymes Digitales</li>
+</ul>
+</div>
+<!-- On-Premise -->
+<div class="group">
+<div class="mb-10 text-primary-container">
+<span class="material-symbols-outlined text-6xl" data-icon="dns">dns</span>
+</div>
+<h3 class="text-3xl font-bold mb-6 tracking-tight">On-Premise</h3>
+<p class="text-tertiary mb-10 leading-relaxed">Control total sobre tus datos y hardware. Integración profunda en tu red local.</p>
+<ul class="space-y-6">
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Propiedad de la Infraestructura
+                            </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Control Total de Seguridad
+                            </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Latencia de Red Interna
+                            </li>
+<li class="pt-6 border-t border-surface-container-high text-xs uppercase tracking-widest text-tertiary">Ideal para Industrias con Red Local Critica</li>
+</ul>
+</div>
+<!-- Hybrid -->
+<div class="group">
+<div class="mb-10 text-primary-container">
+<span class="material-symbols-outlined text-6xl" data-icon="hub">hub</span>
+</div>
+<h3 class="text-3xl font-bold mb-6 tracking-tight">Híbrido / Hosted</h3>
+<p class="text-tertiary mb-10 leading-relaxed">Lo mejor de ambos mundos. Flexibilidad de nube con control de servidor dedicado.</p>
+<ul class="space-y-6">
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Servidores Dedicados Privados
+                            </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Personalización de Entorno
+                            </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+                                Escalabilidad Bajo Demanda
+                            </li>
+<li class="pt-6 border-t border-surface-container-high text-xs uppercase tracking-widest text-tertiary">Ideal para Empresas en Crecimiento</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Packages Table -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-5xl font-black tracking-tighter mb-4">Nuestros Paquetes</h2>
+<p class="text-tertiary">Soluciones escalables que crecen con tu empresa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 rounded-xl overflow-hidden">
+<!-- STARTER -->
+<div class="bg-surface-container-lowest p-12 flex flex-col h-full">
+<div class="mb-8">
+<h4 class="text-xl font-bold uppercase tracking-widest mb-4">STARTER</h4>
+<div class="text-5xl font-black mb-2 tracking-tighter">Básico</div>
+<p class="text-sm text-tertiary">Hasta 5 usuarios</p>
+</div>
+<ul class="space-y-6 mb-12 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Finanzas y Ventas básicas</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Compras e Inventario</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Soporte estándar SAP</span>
+</li>
+</ul>
+<button class="w-full py-4 border border-primary text-primary font-bold uppercase tracking-widest text-xs hover:bg-primary hover:text-on-primary transition-colors">Seleccionar</button>
+</div>
+<!-- PROFESSIONAL -->
+<div class="bg-surface-container-lowest p-12 flex flex-col h-full relative">
+<div class="absolute top-6 right-6 bg-primary-container text-on-primary text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">MÁS POPULAR</div>
+<div class="mb-8">
+<h4 class="text-xl font-bold uppercase tracking-widest mb-4">PROFESSIONAL</h4>
+<div class="text-5xl font-black mb-2 tracking-tighter">Business</div>
+<p class="text-sm text-tertiary">Hasta 30 usuarios</p>
+</div>
+<ul class="space-y-6 mb-12 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Funcionalidad completa de SAP</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Gestión de CRM &amp; Servicios</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Planificación de producción (MRP)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">App móvil incluida</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-primary-container text-on-primary font-bold uppercase tracking-widest text-xs transition-transform active:scale-95">Seleccionar</button>
+</div>
+<!-- ENTERPRISE -->
+<div class="bg-surface-container-lowest p-12 flex flex-col h-full">
+<div class="mb-8">
+<h4 class="text-xl font-bold uppercase tracking-widest mb-4">ENTERPRISE</h4>
+<div class="text-5xl font-black mb-2 tracking-tighter">Unlimited</div>
+<p class="text-sm text-tertiary">Usuarios ilimitados</p>
+</div>
+<ul class="space-y-6 mb-12 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">SAP HANA Analytics In-Memory</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Cuadros de mando avanzados</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Soporte prioritario 24/7</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="check">check</span>
+<span class="text-sm">Multi-sociedad avanzada</span>
+</li>
+</ul>
+<button class="w-full py-4 border border-primary text-primary font-bold uppercase tracking-widest text-xs hover:bg-primary hover:text-on-primary transition-colors">Seleccionar</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Database Comparison -->
+<section class="py-32 px-8 bg-on-secondary-fixed text-on-primary overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[40rem] rotate-12" data-icon="database">database</span>
+</div>
+<div class="max-w-screen-2xl mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="text-5xl font-black tracking-tighter mb-8">Base de Datos: <br/><span class="text-primary-container">SQL vs SAP HANA</span></h2>
+<p class="text-on-primary/60 text-lg mb-12 leading-relaxed">La elección de la base de datos define el rendimiento de tu toma de decisiones. Comparamos las dos potencias arquitectónicas.</p>
+<div class="space-y-8">
+<div class="p-8 bg-white/5 rounded-xl border border-white/10">
+<h4 class="text-2xl font-bold mb-4">SAP HANA</h4>
+<p class="text-on-primary/70 text-sm leading-relaxed mb-6">Tecnología In-Memory diseñada para el análisis de big data en tiempo real. Máxima velocidad de procesamiento.</p>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-primary-container/20 text-primary-container text-[10px] font-bold rounded">IN-MEMORY</span>
+<span class="px-3 py-1 bg-primary-container/20 text-primary-container text-[10px] font-bold rounded">LINUX SUSE</span>
+<span class="px-3 py-1 bg-primary-container/20 text-primary-container text-[10px] font-bold rounded">ANALYTICS+</span>
+</div>
+</div>
+<div class="p-8 bg-white/5 rounded-xl border border-white/10">
+<h4 class="text-2xl font-bold mb-4">MS SQL Server</h4>
+<p class="text-on-primary/70 text-sm leading-relaxed mb-6">Robustez tradicional y familiaridad técnica. Ideal para operaciones estándar con costos de infraestructura optimizados.</p>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-white/10 text-white/60 text-[10px] font-bold rounded">RELACIONAL</span>
+<span class="px-3 py-1 bg-white/10 text-white/60 text-[10px] font-bold rounded">WINDOWS</span>
+<span class="px-3 py-1 bg-white/10 text-white/60 text-[10px] font-bold rounded">ESTÁNDAR</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative aspect-square">
+<img alt="Server data center" class="w-full h-full object-cover rounded-2xl" data-alt="highly detailed macro shot of server rack lights flashing in a dark data center room with neon blue and red accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT-P_lCi7wt7PkTJevMZ5yp_HPVZR5asaGEPiqAcaaw_Q770QXQk9kYkDpGNUlgYbclM2vc7XqPaQWbuYagQPy1UhzD-OtY3y7nn-gcu5b4JJkFSjS-RPgbh9Zi4MOomLj5orcrd6x6wxSwKDAC07NRkkjFRlGuhN7Bx8eXhC0ZwqCopWHP70iSbCUKDxQL1agPjdWCZrj1MF7n28NJ34D8Jpp4cW0gWW_D1GqhnRiYkkV2b9o7HQAnhEEuRbIfaBeU6VZ0BLCgok"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Migration Timeline -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-24">
+<h2 class="text-5xl font-black tracking-tighter">Timeline de Migración</h2>
+<p class="text-tertiary mt-4">Un proceso estructurado para una transición sin fricciones.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="relative">
+<div class="text-8xl font-black text-surface-container-high absolute -top-8 -left-4 z-0">01</div>
+<div class="relative z-10 pt-12">
+<h4 class="text-xl font-bold mb-4">Evaluación</h4>
+<p class="text-sm text-tertiary leading-relaxed">Analizamos tu infraestructura actual y definimos el mapa de ruta ideal hacia SAP Business One.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-8xl font-black text-surface-container-high absolute -top-8 -left-4 z-0">02</div>
+<div class="relative z-10 pt-12">
+<h4 class="text-xl font-bold mb-4">Preparación</h4>
+<p class="text-sm text-tertiary leading-relaxed">Depuración de datos y configuración del nuevo entorno de despliegue (Cloud o On-Premise).</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-8xl font-black text-surface-container-high absolute -top-8 -left-4 z-0">03</div>
+<div class="relative z-10 pt-12">
+<h4 class="text-xl font-bold mb-4">Migración</h4>
+<p class="text-sm text-tertiary leading-relaxed">Ejecución técnica de la migración de datos y validación de integridad en el nuevo sistema.</p>
+</div>
+</div>
+<div class="relative">
+<div class="text-8xl font-black text-surface-container-high absolute -top-8 -left-4 z-0">04</div>
+<div class="relative z-10 pt-12">
+<h4 class="text-xl font-bold mb-4">Optimización</h4>
+<p class="text-sm text-tertiary leading-relaxed">Ajustes finales de rendimiento y formación del equipo para el uso máximo de la plataforma.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Final CTA -->
+<section class="py-32 px-8 bg-primary-container text-on-primary">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-5xl font-black tracking-tighter mb-8">¿No sabes qué paquete elegir?</h2>
+<p class="text-xl text-on-primary/80 mb-12">Nuestros arquitectos de soluciones analizarán tus necesidades específicas para recomendarte la mejor configuración.</p>
+<button class="bg-on-secondary-fixed text-on-primary px-12 py-5 rounded-lg font-bold text-lg hover:bg-on-secondary-fixed/90 transition-all active:scale-95">
+                    Solicitar asesoramiento gratuito
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F3F3F3] dark:bg-[#1A1A2E] w-full py-24 px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div>
+<div class="font-bold text-[#1A1C1C] text-xl mb-6">Timestamp Group</div>
+<p class="text-[#595959] text-xs font-light leading-relaxed">Expertos en arquitectura de sistemas SAP para empresas con visión de futuro.</p>
+</div>
+<div>
+<h5 class="text-xs font-bold uppercase tracking-widest mb-6 text-on-surface">Enlaces Rápidos</h5>
+<ul class="space-y-4">
+<li><a class="text-[#595959] hover:text-[#E30613] text-xs font-light transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-[#595959] hover:text-[#E30613] text-xs font-light transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xs font-bold uppercase tracking-widest mb-6 text-on-surface">Empresa</h5>
+<ul class="space-y-4">
+<li><a class="text-[#595959] hover:text-[#E30613] text-xs font-light transition-colors" href="#">SAP Partnership</a></li>
+<li><a class="text-[#595959] hover:text-[#E30613] text-xs font-light transition-colors" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<div class="text-[#1A1C1C] font-bold text-xs uppercase tracking-widest">Connect with us</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary cursor-pointer hover:text-primary transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-tertiary cursor-pointer hover:text-primary transition-colors" data-icon="hub">hub</span>
+<span class="material-symbols-outlined text-tertiary cursor-pointer hover:text-primary transition-colors" data-icon="mail">mail</span>
+</div>
+<div class="mt-8 text-[10px] text-tertiary uppercase tracking-widest">
+                    © 2024 Timestamp Group. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

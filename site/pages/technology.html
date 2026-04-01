@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arquitectura Tecnológica | SAP Business One Timestamp Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "outline-variant": "#e9bcb6",
+                        "secondary": "#5d5c74",
+                        "inverse-primary": "#ffb4aa",
+                        "outline": "#936e69",
+                        "on-primary-container": "#fff5f3",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary": "#595959",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-secondary-fixed": "#1a1a2e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#e30613",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#410001",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-tertiary-container": "#f8f6f6",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#e2e0fc",
+                        "on-secondary-container": "#63627a",
+                        "on-primary-fixed-variant": "#930007",
+                        "surface-dim": "#dadada",
+                        "surface": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed": "#e4e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#e2e0fc",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdad5",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#45455b",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#717171",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-tint": "#c0000c",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "primary": "#b5000b",
+                        "on-surface-variant": "#5e3f3b",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#c6c4df"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<header class="sticky top-0 z-50 bg-white/90 border-b border-gray-100" style="backdrop-filter: blur(24px);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center">
+        <span class="text-lg font-bold text-[#1A1C1C]">Timestamp Group</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="index.html">Home</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="modules.html">Modules</a>
+      <a class="text-[#E30613] font-bold border-b-2 border-[#E30613] pb-1 text-xs uppercase tracking-[0.05em] font-medium" href="technology.html">Technology</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="services.html">Services</a>
+      <a class="text-[#1A1C1C] hover:text-[#E30613] transition-colors text-xs uppercase tracking-[0.05em] font-medium" href="deployment.html">Deployment</a>
+      </nav>
+      <a href="index.html#contact" class="hidden md:inline-flex px-5 py-2 bg-[#E30613] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#B5000B] transition-colors">Demo</a>
+    </div>
+  </div>
+</header>
+<section class="relative min-h-[819px] flex items-center overflow-hidden bg-on-secondary-fixed">
+<div class="absolute inset-0 z-0">
+<img alt="Abstract technology background" class="w-full h-full object-cover opacity-20 grayscale" data-alt="abstract futuristic network grid with glowing data points and geometric lines on a deep dark blue tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwG1z2HD4uvG6qMOEsmlY1qk96n3fmRZcGZR7W-KFOw6QJOgyMsK5mzm9StN4FxkMn-fFvXXi0NmNb6gJGzNfYwUbiu-h7NqlZ_fGFYq__wZqzHFq2JMGbVZAZ-9u-t6cGBOO8WYARo_NPdCShMD98gfo75NpR2MGajzq4qmd9V8t8dnDoUzHk-x5_DH1q8QTMIewOO1xYV51FMI7eTGSoz_G-xwB23n4I-AbmHDBp9lHax0IoizRw7bYCo3ms4AWrIqpwBwNu4w0"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-secondary-fixed via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<span class="inline-block bg-primary-container text-on-primary-container text-[10px] font-bold tracking-[0.2em] px-3 py-1 uppercase mb-6 rounded-sm">
+                        SAP Business One Versión 10.0
+                    </span>
+<h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none mb-8">
+                        Arquitectura <br/><span class="text-primary-container">Abierta</span> y Extensible
+                    </h1>
+<p class="text-xl md:text-2xl text-zinc-300 leading-relaxed max-w-2xl font-light">
+                        SAP Business One se adapta a tu negocio con un ecosistema tecnológico completo: SDK, APIs, apps móviles e integraciones con cualquier plataforma.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section 2: CLIENT-SERVER ARCHITECTURE -->
+<section class="py-24 bg-surface">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end mb-20">
+<div class="md:col-span-7">
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter mb-6 uppercase">Infraestructura <br/>Cliente-Servidor</h2>
+<p class="text-lg text-tertiary max-w-xl">Una arquitectura robusta diseñada para la escalabilidad, desde terminales locales hasta clientes web basados en SAP Fiori.</p>
+</div>
+<div class="md:col-span-5 flex justify-end">
+<div class="bg-surface-container-low p-6 border-l-4 border-primary">
+<p class="text-sm font-bold text-primary mb-1 uppercase tracking-widest">Upgrade Highlight</p>
+<p class="text-on-surface font-medium">Nueva Versión 10.0 con más de 30 mejoras tecnológicas y rendimiento optimizado.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Client -->
+<div class="bg-surface-container-lowest p-10 group hover:bg-white transition-all duration-500">
+<span class="material-symbols-outlined text-5xl text-primary mb-8 group-hover:scale-110 transition-transform">laptop_mac</span>
+<h3 class="text-2xl font-bold mb-4 uppercase tracking-tight">Capa Cliente</h3>
+<ul class="space-y-4 text-tertiary">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Windows Desktop Client</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Web Client (SAP Fiori UI)</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Mobile (iOS / Android)</li>
+</ul>
+</div>
+<!-- Server -->
+<div class="bg-surface-container-low p-10 group">
+<span class="material-symbols-outlined text-5xl text-primary mb-8">dns</span>
+<h3 class="text-2xl font-bold mb-4 uppercase tracking-tight">Capa Servidor</h3>
+<ul class="space-y-4 text-tertiary">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Windows Server Architecture</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> SUSE Linux Enterprise</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Cloud or On-Premise</li>
+</ul>
+</div>
+<!-- Database -->
+<div class="bg-surface-container-lowest p-10 group hover:bg-white transition-all duration-500">
+<span class="material-symbols-outlined text-5xl text-primary mb-8 group-hover:scale-110 transition-transform">database</span>
+<h3 class="text-2xl font-bold mb-4 uppercase tracking-tight">Motores DB</h3>
+<ul class="space-y-4 text-tertiary">
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> SAP HANA (In-Memory)</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Microsoft SQL Server</li>
+<li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary"></span> Analytics Service Hub</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: SDK & TOOLS (Bento Grid) -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="mb-16">
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter mb-4 uppercase">SDK y Herramientas de Desarrollo</h2>
+<p class="text-lg text-tertiary">Libertad total para desarrolladores mediante interfaces certificadas y modernas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-lowest p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<h4 class="text-xl font-bold uppercase tracking-tight">DI-API</h4>
+<span class="text-xs font-bold text-primary border border-primary px-2 py-0.5">COM-BASED</span>
+</div>
+<p class="text-tertiary">Manipulación de objetos de negocio en el backend. Compatible con C# y VB.NET para integraciones profundas.</p>
+</div>
+<div class="mt-8 pt-6 border-t border-surface-container">
+<span class="text-sm font-semibold text-primary">Business Objects Library</span>
+</div>
+</div>
+<div class="bg-primary text-white p-8 flex flex-col justify-between">
+<div>
+<h4 class="text-xl font-bold uppercase tracking-tight mb-4">Service Layer</h4>
+<p class="text-white/80 text-sm">La interfaz RESTful moderna basada en OData v4 para aplicaciones web y móviles escalables.</p>
+</div>
+<span class="material-symbols-outlined text-4xl opacity-50">api</span>
+</div>
+<div class="bg-on-secondary-fixed text-white p-8 flex flex-col justify-between">
+<div>
+<h4 class="text-xl font-bold uppercase tracking-tight mb-4">UI-API</h4>
+<p class="text-white/80 text-sm">Personalización total de la interfaz de usuario de SAP. Creación de formularios y Add-ons nativos.</p>
+</div>
+<span class="material-symbols-outlined text-4xl opacity-50">dashboard_customize</span>
+</div>
+<div class="md:col-span-4 bg-white p-12 flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1">
+<h4 class="text-2xl font-black uppercase tracking-tighter mb-4">B1i Integration Framework</h4>
+<p class="text-tertiary mb-6">El motor de orquestación para flujos de trabajo complejos. Interoperabilidad total con SAP S/4HANA y ecosistemas heterogéneos mediante XML/XSLT.</p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-surface-container text-tertiary text-[10px] font-bold px-3 py-1 uppercase">Workflows</span>
+<span class="bg-surface-container text-tertiary text-[10px] font-bold px-3 py-1 uppercase">XML/XSLT</span>
+<span class="bg-surface-container text-tertiary text-[10px] font-bold px-3 py-1 uppercase">OData</span>
+</div>
+</div>
+<div class="w-full md:w-1/3 flex justify-center">
+<img alt="Server infrastructure" class="w-full h-48 object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern clean server rack room with blue status lights and professional cable management representing data architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0_BXaVgDkpzt_Mxmj0rvEkswZv3_gLeE3ememSsMGFwPtma6bRBssbcKQ4FeaSyRdFXyhkZjTWDl8aXzhZBOSKkEThbKW_CJQETPTJZPQnk4gC9jLZJkVL5kMJ1K1wBI8JT0pvrIPKU5PxlYVLydxRXrSArwA1SFJnTSis5mwxB3ZHrysXlg2REJDgRv0epbKoKe0hbSDOgU2wZraiov-G_9vEg0TznmVC-JbA0CCUBRnkcwZicWbHvN6FfEHDz8l69oIT866awc"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: MOBILE APPS -->
+<section class="py-24 bg-white overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter mb-8 uppercase">Movilidad Sin Límites</h2>
+<p class="text-xl text-tertiary mb-10 leading-relaxed">Acceda a su negocio desde cualquier lugar con aplicaciones nativas diseñadas para iOS y Android.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">shopping_cart</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase text-sm mb-1">Sales App</h5>
+<p class="text-xs text-tertiary">Gestión de pedidos y CRM en tiempo real para comerciales de campo.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">inventory_2</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase text-sm mb-1">Service App</h5>
+<p class="text-xs text-tertiary">Órdenes de servicio y gestión de almacén con escaneo de códigos.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">task_alt</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase text-sm mb-1">Approvals</h5>
+<p class="text-xs text-tertiary">Autorice transacciones críticas y controle flujos desde su móvil.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-weight="fill">analytics</span>
+<div>
+<h5 class="font-bold text-on-surface uppercase text-sm mb-1">Executive KPIs</h5>
+<p class="text-xs text-tertiary">Cuadros de mando analíticos con soporte de modo offline.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl"></div>
+<img alt="Mobile application usage" class="relative z-10 w-full max-w-lg mx-auto shadow-2xl rounded-xl" data-alt="high-end smartphone displaying business dashboard with red and white UI elements held by professional in minimalist office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFUbKCIwiS1X8V0bfat3WoeJzlpd1J-Yozauwh5kSADjfMyzIlFUM_OMfTiDAGiJX-DuypfrJS-KPAMjIuscl4N6HLPO2jz42uANwsNldnFrzdGkmeKsts_Vf158ROMbNYQkw5o8OY4nw92akGcgSlsniswViVNHlBimnpLbbm00DU8SrHNwKzcsDEvox2mFn64KeEG1UghSXjvfLGf-TgmbvgrshUCYOwLRiZkO9xD3tchBHfUyVmuYb4oE4G5HTOVMxPn-g-oHk"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: INTEGRATIONS -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-8 text-center">
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter mb-16 uppercase">Ecosistema Conectado</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-surface-container-high border border-surface-container-high">
+<!-- Icon blocks -->
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">cloud_sync</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Office 365</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">shopping_bag</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Shopify</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">payments</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Gateways</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">hub</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">EDI/S4HANA</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">description</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Crystal Reports</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">monitoring</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Power BI</p>
+</div>
+<div class="bg-surface p-10 flex flex-col items-center gap-4 hover:bg-white transition-colors group">
+<span class="material-symbols-outlined text-3xl text-tertiary group-hover:text-primary transition-colors">query_stats</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Tableau</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: DATABASES COMPARISON -->
+<section class="py-24 bg-on-secondary-fixed text-white overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="mb-20 text-center">
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-4 uppercase">Motores de Base de Datos</h2>
+<p class="text-zinc-400">Elija la potencia que mejor se adapte a su volumen transaccional.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+<!-- Divider line visible on md -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
+<!-- SQL SERVER -->
+<div class="space-y-8 pr-0 md:pr-12">
+<div class="flex items-center gap-4">
+<span class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-xs font-black">01</span>
+<h3 class="text-3xl font-bold uppercase tracking-tighter">MS SQL Server</h3>
+</div>
+<p class="text-zinc-400 leading-relaxed">La opción estándar para pymes que buscan fiabilidad y facilidad de administración en entornos Windows.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<div>
+<p class="font-bold text-sm uppercase">Basado en Windows</p>
+<p class="text-xs text-zinc-500">Integración nativa con Active Directory y herramientas MS.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<div>
+<p class="font-bold text-sm uppercase">Costo Eficiente</p>
+<p class="text-xs text-zinc-500">Mantenimiento simplificado y menores requisitos de hardware inicial.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- SAP HANA -->
+<div class="space-y-8 pl-0 md:pl-12">
+<div class="flex items-center gap-4">
+<span class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-xs font-black text-white">02</span>
+<h3 class="text-3xl font-bold uppercase tracking-tighter">SAP HANA</h3>
+</div>
+<p class="text-zinc-400 leading-relaxed">Tecnología In-Memory diseñada para el análisis masivo de datos en tiempo real y alta velocidad.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">bolt</span>
+<div>
+<p class="font-bold text-sm uppercase">Velocidad Extrema</p>
+<p class="text-xs text-zinc-500">Hasta 10 veces más rápido en procesamiento transaccional y analítico.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">bolt</span>
+<div>
+<p class="font-bold text-sm uppercase">Analítica Avanzada</p>
+<p class="text-xs text-zinc-500">Predicciones, flujos de caja y analítica integrados en la interfaz.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: SECURITY -->
+<section class="py-24 bg-white">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="flex flex-col md:flex-row gap-20">
+<div class="md:w-1/3">
+<h2 class="text-4xl font-black text-on-surface tracking-tighter mb-6 uppercase">Seguridad y Cumplimiento</h2>
+<p class="text-tertiary mb-8">Protección de datos de nivel empresarial para garantizar la integridad y confidencialidad de su información corporativa.</p>
+<div class="p-6 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<h6 class="font-bold text-sm mb-2 uppercase">Compliance 2026</h6>
+<p class="text-xs text-tertiary">Adaptado a la normativa Verifactu 2026 y Ley Crea y Crece.</p>
+</div>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-12">
+<div class="space-y-4">
+<h5 class="text-lg font-bold flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> RBAC</h5>
+<p class="text-sm text-tertiary">Control de acceso basado en roles. Permisos granulares hasta el nivel de campo individual.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-lg font-bold flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> Audit Trail</h5>
+<p class="text-sm text-tertiary">Seguimiento completo de cambios. Registro histórico de quién, cuándo y qué se modificó.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-lg font-bold flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> Encryption</h5>
+<p class="text-sm text-tertiary">Cifrado de datos en reposo y en tránsito (SSL/TLS) para todas las comunicaciones.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-lg font-bold flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> SSO &amp; 2FA</h5>
+<p class="text-sm text-tertiary">Soporte para Single Sign-On y autenticación de doble factor para máxima seguridad.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-lg font-bold flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> GDPR Ready</h5>
+<p class="text-sm text-tertiary">Herramientas nativas para la protección de datos personales y derecho al olvido.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-lg font-bold flex items-center gap-3"><span class="w-2 h-2 bg-primary"></span> Data Backup</h5>
+<p class="text-sm text-tertiary">Sistemas de backup redundantes y planes de recuperación ante desastres automatizados.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 w-full border-t border-zinc-200 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-[1440px] mx-auto font-['Inter'] text-sm leading-relaxed">
+<div class="space-y-6">
+<div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-tighter">Timestamp Group</div>
+<p class="text-zinc-500 dark:text-zinc-400">Consultora tecnológica líder especializada en implementación de soluciones SAP Business One Gold Partner para el mercado global.</p>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-widest text-[10px]">Company</h6>
+<ul class="space-y-2">
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all hover:translate-y-[-2px] inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all hover:translate-y-[-2px] inline-block" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all hover:translate-y-[-2px] inline-block" href="#">Cookie Settings</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-widest text-[10px]">Legal</h6>
+<ul class="space-y-2">
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all hover:translate-y-[-2px] inline-block" href="#">Legal Notice</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all hover:translate-y-[-2px] inline-block" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-widest text-[10px]">Connect</h6>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center hover:bg-primary-container hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+<a class="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center hover:bg-primary-container hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-8 py-8 border-t border-zinc-100 dark:border-zinc-900 text-center text-zinc-400 text-xs">
+            © 2024 Timestamp Group. All rights reserved. SAP Business One Gold Partner.
+        </div>
+</footer>
+</body></html>
